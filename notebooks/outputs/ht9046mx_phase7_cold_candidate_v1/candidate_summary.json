@@ -1,0 +1,119 @@
+{
+  "release_version": "phase07-cold-relationship-candidate-v1",
+  "source_qa": {
+    "source_rows": 3548928,
+    "source_start": "2026-08-04 00:00:00",
+    "source_end": "2026-09-01 17:10:00",
+    "source_machines": 19,
+    "duplicate_keys": 0
+  },
+  "cold_qualified_5minute_rows": 493976,
+  "development_machines": [
+    "017",
+    "022",
+    "024",
+    "029",
+    "041",
+    "057",
+    "058",
+    "070",
+    "072",
+    "081",
+    "082",
+    "083"
+  ],
+  "external_sparse_machines_not_scored": [
+    "056",
+    "063",
+    "071",
+    "115",
+    "118",
+    "119",
+    "124"
+  ],
+  "split_rows": {
+    "inner_train": 190984,
+    "outer_temporal": 123274,
+    "calibration": 68530,
+    "inner_validation": 63771
+  },
+  "inner_profile_qa": {
+    "past_rows": 184554,
+    "first_pass_quarantined": 32295,
+    "first_pass_quarantine_pct": 17.498943398680062,
+    "supported_profiles": 64,
+    "profiles_over_5pct_quarantine": 65,
+    "worst_profile_quarantine_pct": 59.38796680497925
+  },
+  "final_profile_qa": {
+    "past_rows": 238114,
+    "first_pass_quarantined": 43699,
+    "first_pass_quarantine_pct": 18.352133851852475,
+    "supported_profiles": 78,
+    "profiles_over_5pct_quarantine": 69,
+    "worst_profile_quarantine_pct": 49.559999999999995
+  },
+  "inner_hpo": [
+    {
+      "alpha": 0.1,
+      "inner_validation_rows": 27198,
+      "median_abs_residual": 0.5102733937855458,
+      "p95_residual": 1.872211354196749,
+      "worst_machine_p95": 8.870389317066971
+    },
+    {
+      "alpha": 1.0,
+      "inner_validation_rows": 27198,
+      "median_abs_residual": 0.5102681287167276,
+      "p95_residual": 1.8722073335711389,
+      "worst_machine_p95": 8.870355148590733
+    },
+    {
+      "alpha": 10.0,
+      "inner_validation_rows": 27198,
+      "median_abs_residual": 0.5103853381440437,
+      "p95_residual": 1.872167290850016,
+      "worst_machine_p95": 8.870013590444882
+    }
+  ],
+  "selected_alpha": 10.0,
+  "fit_windows": 175633,
+  "calibration_windows": 42600,
+  "dynamic_threshold": 4.795188217802297,
+  "self_threshold": 7.689194658033186,
+  "temporal": {
+    "scored_windows": 110283,
+    "dynamic_flag_pct": 2.2959114278719293,
+    "self_flag_pct": 33.2354034620023,
+    "any_flag_pct": 33.54732823735299,
+    "dynamic_persistence_episodes": 76,
+    "self_persistence_episodes": 605,
+    "diagnostic_or_persistence_episodes": 633,
+    "diagnostic_or_persistent_windows": 34158,
+    "worst_machine_any_flag_pct": 85.41149513080008,
+    "worst_machine_dynamic_flag_pct": 11.724269620011457
+  },
+  "top_self_flag_contributors": {
+    "rz_valve": 19307,
+    "rz_templo": 4849,
+    "rz_lp2": 4024,
+    "rz_hp1": 2925,
+    "rz_temphi": 2474,
+    "rz_lp1": 1280
+  },
+  "lomo_machines": 12,
+  "lomo_worst_dynamic_flag_pct": 24.785182356310862,
+  "status": "SHADOW_CANDIDATE_REVIEW_REQUIRED",
+  "review_reasons": [
+    "PROFILE_QUARANTINE_EXCEEDS_5PCT",
+    "SELF_LANE_FUTURE_FLAG_BURDEN",
+    "NO_ACTIVE_PROFILE_OR_APPROVED_MODEL",
+    "SOURCE_TIME_AND_SERVICE_CONTEXT_UNVERIFIED"
+  ],
+  "limits": [
+    "No confirmed fault labels; rates are not accuracy",
+    "Source timezone and service epochs unverified",
+    "The previously inspected historical outer period is not a fresh unbiased release test",
+    "Conditional peer lane and server scoring are not integrated"
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "source_timezone_assumption": "Asia/Bangkok",
+  "source_pressure_unit_verified": false,
+  "runs": [
+    {
+      "machine": "MX057",
+      "module": 1,
+      "evaluation_start": "2026-08-27 00:00:00",
+      "evaluation_end_exclusive": "2026-08-30 00:00:00",
+      "profile_source": "PAST_ONLY_CANDIDATE_IN_MEMORY_NOT_ACTIVE",
+      "raw_rows_replayed": 254416,
+      "five_minute_cycles": 864,
+      "grace_seconds": 30,
+      "observed_windows": 4308,
+      "window_mismatches": 0,
+      "score_evidence_mismatches": 0,
+      "missing_windows": 0,
+      "unexpected_windows": 0,
+      "duplicate_errors": 0,
+      "duplicate_batches_tested": 51,
+      "checkpoint_restarts": 35,
+      "late_after_close_rows_dropped": 1,
+      "peak_pending_source_rows": 60,
+      "cycle_processing_ms": {
+        "p50": 9.038,
+        "p95": 16.01,
+        "max": 30.568
+      },
+      "timing_scope": "window construction + scoring + retry/checkpoint probes; source decoding excluded",
+      "scored_minutes": 4123,
+      "daily": [
+        {
+          "date": "2026-08-27",
+          "scored_minutes": 1430,
+          "raw_flags": 0,
+          "persistent_minutes": 0
+        },
+        {
+          "date": "2026-08-28",
+          "scored_minutes": 1264,
+          "raw_flags": 55,
+          "persistent_minutes": 49
+        },
+        {
+          "date": "2026-08-29",
+          "scored_minutes": 1429,
+          "raw_flags": 1214,
+          "persistent_minutes": 1205
+        }
+      ],
+      "before_confirmed_interval": {
+        "scored_minutes": 2936,
+        "raw_flags": 82,
+        "persistent_minutes": 71,
+        "label_status": "not assumed normal or false-positive; interval labels are separate"
+      },
+      "not_scored_reasons": {
+        "LOW_SAMPLE_COVERAGE": 12,
+        "BYPASS_OR_UNKNOWN_SV": 36,
+        "COMPRESSOR_NOT_STABLE_RUN": 118,
+        "MODULE_NOT_STABLE_ON": 19
+      },
+      "confirmed_case": {
+        "start": "2026-08-29 04:06:00",
+        "end_exclusive": "2026-08-29 22:50:00",
+        "qualified_minutes": 1124,
+        "raw_flags": 1124,
+        "persistent_minutes": 1124,
+        "first_persistent_window": "2026-08-29 04:06:00",
+        "first_persistent_available_at": "2026-08-29 04:10:00"
+      },
+      "parity_pass": true,
+      "database_writes": 0,
+      "candidate_status": "REVIEW_REQUIRED",
+      "candidate_reasons": [
+        "CONTROLLER_CODEBOOK_VERSION_UNVERIFIED",
+        "SERVICE_EPOCH_VERSION_UNVERIFIED",
+        "SHADOW_FLAG_RATE_EXCEEDED",
+        "SOURCE_PRESSURE_UNIT_UNVERIFIED",
+        "STATE_CONTRACT_VERSION_UNVERIFIED"
+      ],
+      "calibration_days": 7,
+      "threshold": 6.9640463485078214
+    },
+    {
+      "machine": "MX080",
+      "module": 6,
+      "evaluation_start": "2026-09-07 00:00:00",
+      "evaluation_end_exclusive": "2026-09-08 00:00:00",
+      "profile_source": "PAST_ONLY_CANDIDATE_IN_MEMORY_NOT_ACTIVE",
+      "raw_rows_replayed": 84257,
+      "five_minute_cycles": 288,
+      "grace_seconds": 30,
+      "observed_windows": 1430,
+      "window_mismatches": 0,
+      "score_evidence_mismatches": 0,
+      "missing_windows": 0,
+      "unexpected_windows": 0,
+      "duplicate_errors": 0,
+      "duplicate_batches_tested": 17,
+      "checkpoint_restarts": 12,
+      "late_after_close_rows_dropped": 1,
+      "peak_pending_source_rows": 60,
+      "cycle_processing_ms": {
+        "p50": 7.998,
+        "p95": 13.317,
+        "max": 20.011
+      },
+      "timing_scope": "window construction + scoring + retry/checkpoint probes; source decoding excluded",
+      "scored_minutes": 1194,
+      "daily": [
+        {
+          "date": "2026-09-07",
+          "scored_minutes": 1194,
+          "raw_flags": 716,
+          "persistent_minutes": 704
+        }
+      ],
+      "before_confirmed_interval": {
+        "scored_minutes": 501,
+        "raw_flags": 23,
+        "persistent_minutes": 17,
+        "label_status": "not assumed normal or false-positive; interval labels are separate"
+      },
+      "not_scored_reasons": {
+        "COMPRESSOR_NOT_STABLE_RUN": 154,
+        "MODULE_NOT_STABLE_ON": 69,
+        "LOW_SAMPLE_COVERAGE": 13
+      },
+      "confirmed_case": {
+        "start": "2026-09-07 12:23:28",
+        "end_exclusive": "2026-09-08 00:00:00",
+        "qualified_minutes": 693,
+        "raw_flags": 693,
+        "persistent_minutes": 687,
+        "first_persistent_window": "2026-09-07 12:24:00",
+        "first_persistent_available_at": "2026-09-07 12:30:00"
+      },
+      "parity_pass": true,
+      "database_writes": 0,
+      "candidate_status": "INSUFFICIENT_DATA",
+      "candidate_reasons": [
+        "CONTROLLER_CODEBOOK_VERSION_UNVERIFIED",
+        "INSUFFICIENT_CALIBRATION_COVERAGE",
+        "INSUFFICIENT_SHADOW_COVERAGE",
+        "SERVICE_EPOCH_VERSION_UNVERIFIED",
+        "SHADOW_DURATION_LT_REQUIRED",
+        "SHADOW_FLAG_RATE_EXCEEDED",
+        "SOURCE_PRESSURE_UNIT_UNVERIFIED",
+        "STATE_CONTRACT_VERSION_UNVERIFIED"
+      ],
+      "calibration_days": 4,
+      "threshold": 7.8593737923352505
+    }
+  ],
+  "total_seconds": 146.165,
+  "mx080_reference_limitation": "Only four past days and one evaluation day; not a seven-day calibration / three-day shadow or an Active Profile",
+  "database_writes": 0
+}

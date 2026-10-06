@@ -1,0 +1,2 @@
+historical_release,current_release,historical_threshold,current_threshold,historical_raw_flag_rate_pct,current_raw_flag_rate_pct,historical_persistent_alerts,current_persistent_alerts,persistent_alert_delta,comparison_claim
+phase07-shadow-replay-v1-deprecated-hp200,phase07-shadow-replay-v2-hp180,7.659757431174084,7.650715626730769,0.3958954290004778,0.3936201679142682,37,36,-1,alert-burden stability only; no diagnostic-accuracy comparison without confirmed labels

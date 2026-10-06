@@ -1,0 +1,22 @@
+{
+  "ARX-Ridge": {
+    "alpha": 0.1
+  },
+  "COPOD": {
+    "top_k": 5
+  },
+  "ECOD": {
+    "feature_quantile": 0.9
+  },
+  "IsolationForest": {
+    "max_features": 0.7,
+    "max_samples": 256,
+    "n_estimators": 200
+  },
+  "PCA-SPE": {
+    "variance": 0.9
+  },
+  "Robust-MAD": {
+    "feature_quantile": 0.8
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-06",
+  "source_repository": "OPERATION_P",
+  "source_head": "edfc2535cfaf2586572873de718de083ea93108f",
+  "includes_current_working_tree": true,
+  "private_only": true,
+  "server": "10.195.17.73",
+  "source_database_dumps_included": false,
+  "skipped_runtime_files": [
+    "artifacts/api-fleet-20261006.stderr.log",
+    "artifacts/api-fleet-20261006.stdout.log",
+    "artifacts/api-fleet-final-20261006.stderr.log",
+    "artifacts/api-fleet-final-20261006.stdout.log",
+    "artifacts/fleet-transition-build-20261006.log",
+    "artifacts/fleet-workflow-final-targeted-20261006.log",
+    "artifacts/fleet-workflow-qa-20261006.log",
+    "artifacts/fleet-workflow-tests-20261006.log"
+  ]
+}

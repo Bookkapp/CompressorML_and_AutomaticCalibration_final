@@ -1,0 +1,66 @@
+{
+  "purpose": "Forensic audit of valve-dominated Self flags; not model training or alert threshold selection",
+  "row_grain": "one raw machine timestamp; one selected module at a time",
+  "selected_contexts": [
+    {
+      "machine_number": "041",
+      "module": 6,
+      "outer_start": "2026-08-23 00:00:00",
+      "five_minute_rows": 1846,
+      "five_minute_pct_abs_valve_rz_gt8": 99.83748645720478,
+      "five_minute_median_abs_valve_rz": 100.0,
+      "train_valve_median": 104.0,
+      "train_valve_scale": 0.05,
+      "train_hp2_median": 198.1
+    },
+    {
+      "machine_number": "083",
+      "module": 2,
+      "outer_start": "2026-08-27 00:00:00",
+      "five_minute_rows": 1598,
+      "five_minute_pct_abs_valve_rz_gt8": 69.21151439299123,
+      "five_minute_median_abs_valve_rz": 40.0,
+      "train_valve_median": 85.0,
+      "train_valve_scale": 0.05,
+      "train_hp2_median": 196.5
+    },
+    {
+      "machine_number": "072",
+      "module": 1,
+      "outer_start": "2026-08-20 00:00:00",
+      "five_minute_rows": 1272,
+      "five_minute_pct_abs_valve_rz_gt8": 99.76415094339622,
+      "five_minute_median_abs_valve_rz": 60.0,
+      "train_valve_median": 78.0,
+      "train_valve_scale": 0.05,
+      "train_hp2_median": 194.9
+    },
+    {
+      "machine_number": "070",
+      "module": 5,
+      "outer_start": "2026-08-25 00:00:00",
+      "five_minute_rows": 1866,
+      "five_minute_pct_abs_valve_rz_gt8": 31.779206859592712,
+      "five_minute_median_abs_valve_rz": 0.0,
+      "train_valve_median": 88.0,
+      "train_valve_scale": 0.05,
+      "train_hp2_median": 270.1
+    }
+  ],
+  "source_day_count": 16,
+  "source_rows": 1210423,
+  "duplicate_timestamp_rows_excluded": 0,
+  "qualified_after_180s_observed_samples": 981831,
+  "isolated_clean_step_events": 0,
+  "manual_changevalve_events": 27,
+  "manual_changevalve_paired_plateaus": 6,
+  "event_coverage_status": "INSUFFICIENT_CLEAN_EVENTS",
+  "limits": [
+    "Days/modules selected after reviewing a retrospective test: diagnostic only, not an untouched model test",
+    "Source timezone and pressure units are not encoded",
+    "No recipe/load/water or service/refill epoch data",
+    "Valve is command/position, not measured refrigerant flow",
+    "Correlation or lag cannot establish cause",
+    "No Active MySQL profile was used"
+  ]
+}

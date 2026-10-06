@@ -1,0 +1,69 @@
+{
+  "registry_version": "phase07-shadow-registry-v2-hp180",
+  "feature_version": "minute-relative-regime-hp180-v3",
+  "profile_version": "machine-module-sv-train-only-hp180-v3",
+  "threshold_version": "past-calibration-q995-hp180-v2",
+  "hp2_reference_policy": {
+    "qualified_reference_band_psi": [
+      180.0,
+      230.0
+    ],
+    "undercharge_screening_boundary_psi": 180.0,
+    "feature": "hp2_low_deficit_below_180_10psi",
+    "high_side_interpretation": "separate local/multivariate deviation evidence; not undercharge and not a water-cause label"
+  },
+  "activation_state": "NOT_AUTHORIZED",
+  "auto_activation_allowed": false,
+  "model_files": {
+    "Robust-MAD__seed_13": "models/Robust-MAD__seed_13.joblib",
+    "PCA-SPE__seed_13": "models/PCA-SPE__seed_13.joblib",
+    "ECOD__seed_13": "models/ECOD__seed_13.joblib",
+    "COPOD__seed_13": "models/COPOD__seed_13.joblib",
+    "ARX-Ridge__seed_13": "models/ARX-Ridge__seed_13.joblib",
+    "IsolationForest__seed_13": "models/IsolationForest__seed_13.joblib",
+    "IsolationForest__seed_29": "models/IsolationForest__seed_29.joblib",
+    "IsolationForest__seed_47": "models/IsolationForest__seed_47.joblib"
+  },
+  "features": [
+    "rz_hp1",
+    "rz_lp1",
+    "rz_hp2",
+    "rz_lp2",
+    "rz_valve",
+    "rz_temphi",
+    "rz_templo",
+    "rz_dp1",
+    "rz_dp2",
+    "rz_hp_stage_gap",
+    "rz_lp_stage_gap",
+    "rz_hp1_slope_15m",
+    "rz_lp1_slope_15m",
+    "rz_hp2_slope_15m",
+    "rz_lp2_slope_15m",
+    "rz_valve_slope_15m",
+    "rz_temphi_slope_15m",
+    "rz_templo_slope_15m",
+    "rz_valve_change_1m",
+    "rz_hp2_response_1m",
+    "rz_valve_to_hp2_gain_1m",
+    "rz_lp2_response_1m",
+    "rz_valve_to_lp2_gain_1m",
+    "rz_templo_response_1m",
+    "rz_valve_to_templo_gain_1m",
+    "rz_valve_change_5m",
+    "rz_hp2_response_5m",
+    "rz_valve_to_hp2_gain_5m",
+    "rz_lp2_response_5m",
+    "rz_valve_to_lp2_gain_5m",
+    "rz_templo_response_5m",
+    "rz_valve_to_templo_gain_5m",
+    "hp2_low_deficit_below_180_10psi"
+  ],
+  "source_period": {
+    "start": "2026-08-04 00:05:00",
+    "end": "2026-09-01 17:10:00",
+    "timezone": "not encoded"
+  },
+  "split_contract": "day-level nested temporal; inner HPO then separate calibration; outer temporal/LOMO/sparse untouched",
+  "claim_level": "anomaly_screening_only"
+}

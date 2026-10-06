@@ -1,0 +1,1317 @@
+{
+  "machine_number": "022",
+  "profile_version": "autobootstrap-candidate-v2-hp180",
+  "feature_version": "minute-state-core-hp180-v2",
+  "source_timezone": "not encoded",
+  "service_epoch": "epoch-unverified-20260804-20260901",
+  "auto_activation_allowed": false,
+  "activation_state": "NOT_AUTHORIZED",
+  "required_next_action": "shadow review + service-epoch verification + human approval",
+  "profiles": [
+    {
+      "module": 1,
+      "sv": "Off",
+      "lifecycle_status": "SHADOW_VALIDATION",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED"
+      ],
+      "n_windows": 16211,
+      "n_days": 14,
+      "source_start": "2026-08-06 00:02:00",
+      "source_end": "2026-08-25 13:55:00",
+      "statistics": {
+        "hp1": {
+          "median": 162.8,
+          "mad": 4.0,
+          "q05": 155.1,
+          "q25": 155.6,
+          "q75": 164.4,
+          "q95": 168.2,
+          "scale": 5.930408875746444
+        },
+        "lp1": {
+          "median": 28.1,
+          "mad": 0.7999999999999972,
+          "q05": 26.7,
+          "q25": 26.9,
+          "q75": 28.4,
+          "q95": 29.5,
+          "scale": 1.1860817751492847
+        },
+        "hp2": {
+          "median": 189.5,
+          "mad": 4.5,
+          "q05": 183.8,
+          "q25": 184.7,
+          "q75": 191.7,
+          "q95": 198.7,
+          "scale": 6.67170998521475
+        },
+        "lp2": {
+          "median": 14.1,
+          "mad": 2.0999999999999996,
+          "q05": 11.3,
+          "q25": 11.8,
+          "q75": 15.2,
+          "q95": 18.5,
+          "scale": 3.1134646597668825
+        },
+        "valve": {
+          "median": 81.0,
+          "mad": 0.0,
+          "q05": 81.0,
+          "q25": 81.0,
+          "q75": 81.0,
+          "q95": 81.0,
+          "scale": 1.0
+        },
+        "temphi": {
+          "median": 85.8,
+          "mad": 3.4000000000000057,
+          "q05": 79.2,
+          "q25": 82.8,
+          "q75": 89.3,
+          "q95": 89.8,
+          "scale": 5.040847544384486
+        },
+        "templo": {
+          "median": -7.5,
+          "mad": 4.5,
+          "q05": -22.3,
+          "q25": -12.4,
+          "q75": -3.0,
+          "q95": -2.5,
+          "scale": 6.67170998521475
+        }
+      }
+    },
+    {
+      "module": 1,
+      "sv": "On",
+      "lifecycle_status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "CALIBRATION_DAYS_LT_7",
+        "ELIGIBLE_WINDOWS_LT_200",
+        "QUARANTINE_RATE_GT_5PCT",
+        "CALIBRATION_HALF_SHIFT_GT_1P5_RZ",
+        "SHADOW_DAYS_LT_3"
+      ],
+      "n_windows": 62,
+      "n_days": 3,
+      "source_start": "2026-08-12 01:40:00",
+      "source_end": "2026-08-30 13:47:00",
+      "statistics": {
+        "hp1": {
+          "median": 174.5,
+          "mad": 5.549999999999997,
+          "q05": 167.8,
+          "q25": 170.7,
+          "q75": 180.2,
+          "q95": 180.6,
+          "scale": 8.228442315098187
+        },
+        "lp1": {
+          "median": 31.0,
+          "mad": 0.3000000000000007,
+          "q05": 30.1,
+          "q25": 30.4,
+          "q75": 31.2,
+          "q95": 31.4,
+          "scale": 0.44478066568098434
+        },
+        "hp2": {
+          "median": 217.85000000000002,
+          "mad": 1.8499999999999943,
+          "q05": 207.4,
+          "q25": 213.5,
+          "q75": 219.0,
+          "q95": 223.2,
+          "scale": 2.742814105032722
+        },
+        "lp2": {
+          "median": 19.8,
+          "mad": 0.3000000000000007,
+          "q05": 19.3,
+          "q25": 19.6,
+          "q75": 20.1,
+          "q95": 20.6,
+          "scale": 0.44478066568098434
+        },
+        "valve": {
+          "median": 76.0,
+          "mad": 0.0,
+          "q05": 70.0,
+          "q25": 73.0,
+          "q75": 76.0,
+          "q95": 79.0,
+          "scale": 2.223869532987398
+        },
+        "temphi": {
+          "median": 53.400000000000006,
+          "mad": 9.600000000000001,
+          "q05": 38.1,
+          "q25": 44.4,
+          "q75": 64.5,
+          "q95": 77.2,
+          "scale": 14.232981301791469
+        },
+        "templo": {
+          "median": -61.9,
+          "mad": 1.5,
+          "q05": -63.5,
+          "q25": -63.4,
+          "q75": -61.0,
+          "q95": -59.8,
+          "scale": 2.2239033284049166
+        }
+      }
+    },
+    {
+      "module": 2,
+      "sv": "Off",
+      "lifecycle_status": "REVIEW_REQUIRED",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "QUARANTINE_RATE_GT_5PCT",
+        "CALIBRATION_HALF_SHIFT_GT_1P5_RZ"
+      ],
+      "n_windows": 8867,
+      "n_days": 9,
+      "source_start": "2026-08-06 00:02:00",
+      "source_end": "2026-08-21 04:32:00",
+      "statistics": {
+        "hp1": {
+          "median": 161.8,
+          "mad": 0.5,
+          "q05": 159.8,
+          "q25": 161.2,
+          "q75": 162.2,
+          "q95": 162.8,
+          "scale": 0.7413011094683055
+        },
+        "lp1": {
+          "median": 27.7,
+          "mad": 0.1999999999999993,
+          "q05": 27.3,
+          "q25": 27.5,
+          "q75": 27.8,
+          "q95": 28.1,
+          "scale": 0.2965204437873212
+        },
+        "hp2": {
+          "median": 202.7,
+          "mad": 1.0,
+          "q05": 198.4,
+          "q25": 201.2,
+          "q75": 203.6,
+          "q95": 204.5,
+          "scale": 1.482602218936611
+        },
+        "lp2": {
+          "median": 16.6,
+          "mad": 0.20000000000000284,
+          "q05": 15.7,
+          "q25": 16.3,
+          "q75": 16.8,
+          "q95": 17.1,
+          "scale": 0.29652044378732645
+        },
+        "valve": {
+          "median": 77.0,
+          "mad": 0.0,
+          "q05": 77.0,
+          "q25": 77.0,
+          "q75": 77.0,
+          "q95": 77.0,
+          "scale": 1.0
+        },
+        "temphi": {
+          "median": 87.8,
+          "mad": 0.20000000000000284,
+          "q05": 87.3,
+          "q25": 87.6,
+          "q75": 88.0,
+          "q95": 88.7,
+          "scale": 0.29652044378732645
+        },
+        "templo": {
+          "median": -15.5,
+          "mad": 0.3000000000000007,
+          "q05": -16.4,
+          "q25": -15.7,
+          "q75": -15.1,
+          "q95": -13.6,
+          "scale": 0.44478066568098434
+        }
+      }
+    },
+    {
+      "module": 2,
+      "sv": "On",
+      "lifecycle_status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "CALIBRATION_DAYS_LT_7",
+        "ELIGIBLE_WINDOWS_LT_200",
+        "QUARANTINE_RATE_GT_5PCT",
+        "SHADOW_DAYS_LT_3"
+      ],
+      "n_windows": 46,
+      "n_days": 2,
+      "source_start": "2026-08-20 10:25:00",
+      "source_end": "2026-08-30 13:47:00",
+      "statistics": {
+        "hp1": {
+          "median": 151.2,
+          "mad": 0.799999999999983,
+          "q05": 149.9,
+          "q25": 150.7,
+          "q75": 152.3,
+          "q95": 152.8,
+          "scale": 1.1860817751492636
+        },
+        "lp1": {
+          "median": 30.1,
+          "mad": 0.20000000000000284,
+          "q05": 29.4,
+          "q25": 29.9,
+          "q75": 30.3,
+          "q95": 30.7,
+          "scale": 0.29652044378732645
+        },
+        "hp2": {
+          "median": 258.9,
+          "mad": 13.349999999999994,
+          "q05": 221.4,
+          "q25": 238.9,
+          "q75": 270.2,
+          "q95": 277.5,
+          "scale": 19.792739622803747
+        },
+        "lp2": {
+          "median": 29.7,
+          "mad": 0.40000000000000213,
+          "q05": 27.3,
+          "q25": 28.6,
+          "q75": 30.1,
+          "q95": 30.2,
+          "scale": 0.5930408875746476
+        },
+        "valve": {
+          "median": 81.0,
+          "mad": 0.0,
+          "q05": 81.0,
+          "q25": 81.0,
+          "q75": 82.0,
+          "q95": 83.0,
+          "scale": 1.0
+        },
+        "temphi": {
+          "median": 42.3,
+          "mad": 11.250000000000004,
+          "q05": 26.1,
+          "q25": 30.5,
+          "q75": 53.5,
+          "q95": 65.9,
+          "scale": 16.679274963036878
+        },
+        "templo": {
+          "median": -60.45,
+          "mad": 0.15000000000000568,
+          "q05": -61.7,
+          "q25": -61.0,
+          "q75": -60.3,
+          "q95": -60.2,
+          "scale": 0.22239033284050008
+        }
+      }
+    },
+    {
+      "module": 3,
+      "sv": "Off",
+      "lifecycle_status": "REVIEW_REQUIRED",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "CALIBRATION_HALF_SHIFT_GT_1P5_RZ"
+      ],
+      "n_windows": 16175,
+      "n_days": 14,
+      "source_start": "2026-08-06 00:02:00",
+      "source_end": "2026-08-25 13:55:00",
+      "statistics": {
+        "hp1": {
+          "median": 156.0,
+          "mad": 1.0999999999999943,
+          "q05": 154.8,
+          "q25": 155.3,
+          "q75": 158.0,
+          "q95": 160.0,
+          "scale": 1.6308624408302637
+        },
+        "lp1": {
+          "median": 28.4,
+          "mad": 0.1999999999999993,
+          "q05": 28.1,
+          "q25": 28.3,
+          "q75": 28.6,
+          "q95": 28.9,
+          "scale": 0.2965204437873212
+        },
+        "hp2": {
+          "median": 203.6,
+          "mad": 1.9000000000000057,
+          "q05": 201.0,
+          "q25": 202.2,
+          "q75": 206.7,
+          "q95": 209.0,
+          "scale": 2.8169442159795692
+        },
+        "lp2": {
+          "median": 17.0,
+          "mad": 0.6999999999999993,
+          "q05": 16.1,
+          "q25": 16.4,
+          "q75": 18.2,
+          "q95": 19.3,
+          "scale": 1.0378215532556267
+        },
+        "valve": {
+          "median": 92.0,
+          "mad": 0.0,
+          "q05": 85.0,
+          "q25": 85.0,
+          "q75": 92.0,
+          "q95": 92.0,
+          "scale": 5.189028910303929
+        },
+        "temphi": {
+          "median": 89.4,
+          "mad": 1.0,
+          "q05": 87.2,
+          "q25": 88.1,
+          "q75": 90.0,
+          "q95": 90.7,
+          "scale": 1.482602218936611
+        },
+        "templo": {
+          "median": -3.5,
+          "mad": 1.7999999999999998,
+          "q05": -8.1,
+          "q25": -6.6,
+          "q75": -2.1,
+          "q95": -1.4,
+          "scale": 2.6686839940858995
+        }
+      }
+    },
+    {
+      "module": 3,
+      "sv": "On",
+      "lifecycle_status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "CALIBRATION_DAYS_LT_7",
+        "ELIGIBLE_WINDOWS_LT_200",
+        "QUARANTINE_RATE_GT_5PCT",
+        "SHADOW_DAYS_LT_3"
+      ],
+      "n_windows": 52,
+      "n_days": 2,
+      "source_start": "2026-08-20 02:56:00",
+      "source_end": "2026-08-30 13:47:00",
+      "statistics": {
+        "hp1": {
+          "median": 169.8,
+          "mad": 1.5999999999999943,
+          "q05": 163.4,
+          "q25": 167.2,
+          "q75": 171.0,
+          "q95": 171.9,
+          "scale": 2.3721635502985694
+        },
+        "lp1": {
+          "median": 30.4,
+          "mad": 0.20000000000000284,
+          "q05": 29.3,
+          "q25": 30.2,
+          "q75": 30.6,
+          "q95": 30.8,
+          "scale": 0.29652044378732645
+        },
+        "hp2": {
+          "median": 230.9,
+          "mad": 1.75,
+          "q05": 217.8,
+          "q25": 229.2,
+          "q75": 232.6,
+          "q95": 233.9,
+          "scale": 2.5945538831390693
+        },
+        "lp2": {
+          "median": 29.2,
+          "mad": 1.6000000000000014,
+          "q05": 20.5,
+          "q25": 26.5,
+          "q75": 30.4,
+          "q95": 31.6,
+          "scale": 2.3721635502985796
+        },
+        "valve": {
+          "median": 77.0,
+          "mad": 0.0,
+          "q05": 70.0,
+          "q25": 77.0,
+          "q75": 77.0,
+          "q95": 80.0,
+          "scale": 1.0
+        },
+        "temphi": {
+          "median": 92.4,
+          "mad": 5.25,
+          "q05": 46.9,
+          "q25": 87.9,
+          "q75": 102.2,
+          "q95": 105.7,
+          "scale": 7.783661649417208
+        },
+        "templo": {
+          "median": 11.7,
+          "mad": 17.200000000000003,
+          "q05": -60.8,
+          "q25": -4.8,
+          "q75": 28.5,
+          "q95": 32.6,
+          "scale": 25.500758165709716
+        }
+      }
+    },
+    {
+      "module": 4,
+      "sv": "Off",
+      "lifecycle_status": "REVIEW_REQUIRED",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "CALIBRATION_HALF_SHIFT_GT_1P5_RZ"
+      ],
+      "n_windows": 16194,
+      "n_days": 14,
+      "source_start": "2026-08-06 00:02:00",
+      "source_end": "2026-08-25 13:55:00",
+      "statistics": {
+        "hp1": {
+          "median": 153.3,
+          "mad": 1.5,
+          "q05": 151.5,
+          "q25": 152.2,
+          "q75": 156.1,
+          "q95": 157.2,
+          "scale": 2.2239033284049166
+        },
+        "lp1": {
+          "median": 31.8,
+          "mad": 0.6999999999999993,
+          "q05": 30.6,
+          "q25": 31.0,
+          "q75": 32.4,
+          "q95": 32.8,
+          "scale": 1.0378215532556267
+        },
+        "hp2": {
+          "median": 212.0,
+          "mad": 1.8000000000000114,
+          "q05": 208.2,
+          "q25": 210.4,
+          "q75": 214.2,
+          "q95": 217.3,
+          "scale": 2.668683994085917
+        },
+        "lp2": {
+          "median": 13.4,
+          "mad": 2.9000000000000004,
+          "q05": 9.4,
+          "q25": 10.7,
+          "q75": 16.9,
+          "q95": 18.4,
+          "scale": 4.299546434916173
+        },
+        "valve": {
+          "median": 83.0,
+          "mad": 2.0,
+          "q05": 79.0,
+          "q25": 83.0,
+          "q75": 86.0,
+          "q95": 86.0,
+          "scale": 2.965204437873222
+        },
+        "temphi": {
+          "median": 83.8,
+          "mad": 0.8999999999999915,
+          "q05": 81.1,
+          "q25": 81.9,
+          "q75": 84.4,
+          "q95": 85.1,
+          "scale": 1.3343419970429373
+        },
+        "templo": {
+          "median": -1.5,
+          "mad": 5.0,
+          "q05": -16.8,
+          "q25": -13.7,
+          "q75": 3.1,
+          "q95": 5.0,
+          "scale": 7.413011094683055
+        }
+      }
+    },
+    {
+      "module": 4,
+      "sv": "On",
+      "lifecycle_status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "CALIBRATION_DAYS_LT_7",
+        "ELIGIBLE_WINDOWS_LT_200",
+        "QUARANTINE_RATE_GT_5PCT",
+        "CALIBRATION_HALF_SHIFT_GT_1P5_RZ",
+        "SHADOW_DAYS_LT_3"
+      ],
+      "n_windows": 59,
+      "n_days": 3,
+      "source_start": "2026-08-12 01:38:00",
+      "source_end": "2026-08-30 13:47:00",
+      "statistics": {
+        "hp1": {
+          "median": 153.3,
+          "mad": 2.1999999999999886,
+          "q05": 147.4,
+          "q25": 149.4,
+          "q75": 154.2,
+          "q95": 155.5,
+          "scale": 3.2617248816605273
+        },
+        "lp1": {
+          "median": 31.4,
+          "mad": 0.1999999999999993,
+          "q05": 30.6,
+          "q25": 31.2,
+          "q75": 31.5,
+          "q95": 32.1,
+          "scale": 0.2965204437873212
+        },
+        "hp2": {
+          "median": 206.3,
+          "mad": 1.3999999999999773,
+          "q05": 198.7,
+          "q25": 205.9,
+          "q75": 210.0,
+          "q95": 214.5,
+          "scale": 2.0756431065112215
+        },
+        "lp2": {
+          "median": 12.0,
+          "mad": 1.1999999999999993,
+          "q05": 0.0,
+          "q25": 9.4,
+          "q75": 13.0,
+          "q95": 13.4,
+          "scale": 1.7791226627239323
+        },
+        "valve": {
+          "median": 85.0,
+          "mad": 1.0,
+          "q05": 80.0,
+          "q25": 81.0,
+          "q75": 86.0,
+          "q95": 86.0,
+          "scale": 1.482602218936611
+        },
+        "temphi": {
+          "median": 82.3,
+          "mad": 1.9000000000000057,
+          "q05": 59.0,
+          "q25": 78.1,
+          "q75": 84.1,
+          "q95": 85.9,
+          "scale": 2.8169442159795692
+        },
+        "templo": {
+          "median": 12.6,
+          "mad": 6.8,
+          "q05": -2.3,
+          "q25": 6.0,
+          "q75": 20.9,
+          "q95": 29.1,
+          "scale": 10.081695088768955
+        }
+      }
+    },
+    {
+      "module": 5,
+      "sv": "Off",
+      "lifecycle_status": "REVIEW_REQUIRED",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "CALIBRATION_HALF_SHIFT_GT_1P5_RZ"
+      ],
+      "n_windows": 16117,
+      "n_days": 14,
+      "source_start": "2026-08-06 00:02:00",
+      "source_end": "2026-08-25 13:55:00",
+      "statistics": {
+        "hp1": {
+          "median": 152.3,
+          "mad": 0.5,
+          "q05": 150.3,
+          "q25": 151.9,
+          "q75": 153.1,
+          "q95": 155.8,
+          "scale": 0.7413011094683055
+        },
+        "lp1": {
+          "median": 28.3,
+          "mad": 0.1999999999999993,
+          "q05": 27.9,
+          "q25": 28.2,
+          "q75": 28.6,
+          "q95": 29.0,
+          "scale": 0.2965204437873212
+        },
+        "hp2": {
+          "median": 235.0,
+          "mad": 1.4000000000000057,
+          "q05": 227.8,
+          "q25": 234.1,
+          "q75": 237.2,
+          "q95": 240.0,
+          "scale": 2.0756431065112637
+        },
+        "lp2": {
+          "median": 23.2,
+          "mad": 0.6999999999999993,
+          "q05": 20.1,
+          "q25": 22.8,
+          "q75": 24.8,
+          "q95": 26.9,
+          "scale": 1.0378215532556267
+        },
+        "valve": {
+          "median": 83.0,
+          "mad": 0.0,
+          "q05": 83.0,
+          "q25": 83.0,
+          "q75": 83.0,
+          "q95": 83.0,
+          "scale": 1.0
+        },
+        "temphi": {
+          "median": 102.4,
+          "mad": 1.7999999999999972,
+          "q05": 97.2,
+          "q25": 100.9,
+          "q75": 104.3,
+          "q95": 106.4,
+          "scale": 2.6686839940858955
+        },
+        "templo": {
+          "median": -3.9,
+          "mad": 1.0,
+          "q05": -12.6,
+          "q25": -6.8,
+          "q75": -3.3,
+          "q95": -2.5,
+          "scale": 1.482602218936611
+        }
+      }
+    },
+    {
+      "module": 5,
+      "sv": "On",
+      "lifecycle_status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "CALIBRATION_DAYS_LT_7",
+        "ELIGIBLE_WINDOWS_LT_200",
+        "SHADOW_DAYS_LT_3"
+      ],
+      "n_windows": 31,
+      "n_days": 2,
+      "source_start": "2026-08-12 01:38:00",
+      "source_end": "2026-08-20 12:59:00",
+      "statistics": {
+        "hp1": {
+          "median": 153.7,
+          "mad": 2.5,
+          "q05": 150.8,
+          "q25": 151.2,
+          "q75": 156.1,
+          "q95": 156.6,
+          "scale": 3.7065055473415276
+        },
+        "lp1": {
+          "median": 28.6,
+          "mad": 0.10000000000000142,
+          "q05": 28.3,
+          "q25": 28.5,
+          "q75": 28.8,
+          "q95": 29.0,
+          "scale": 0.14826022189366322
+        },
+        "hp2": {
+          "median": 239.3,
+          "mad": 1.6999999999999886,
+          "q05": 236.4,
+          "q25": 238.1,
+          "q75": 241.2,
+          "q95": 242.3,
+          "scale": 2.520423772192222
+        },
+        "lp2": {
+          "median": 26.0,
+          "mad": 1.1999999999999993,
+          "q05": 23.9,
+          "q25": 25.2,
+          "q75": 27.7,
+          "q95": 28.8,
+          "scale": 1.7791226627239323
+        },
+        "valve": {
+          "median": 83.0,
+          "mad": 0.0,
+          "q05": 83.0,
+          "q25": 83.0,
+          "q75": 83.0,
+          "q95": 83.0,
+          "scale": 1.0
+        },
+        "temphi": {
+          "median": 103.3,
+          "mad": 1.5,
+          "q05": 99.8,
+          "q25": 101.8,
+          "q75": 104.8,
+          "q95": 107.7,
+          "scale": 2.2239033284049166
+        },
+        "templo": {
+          "median": 2.7,
+          "mad": 6.1,
+          "q05": -5.1,
+          "q25": -1.8,
+          "q75": 10.1,
+          "q95": 21.0,
+          "scale": 9.043873535513328
+        }
+      }
+    },
+    {
+      "module": 6,
+      "sv": "Off",
+      "lifecycle_status": "REVIEW_REQUIRED",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "CALIBRATION_HALF_SHIFT_GT_1P5_RZ"
+      ],
+      "n_windows": 16105,
+      "n_days": 14,
+      "source_start": "2026-08-06 00:02:00",
+      "source_end": "2026-08-25 13:55:00",
+      "statistics": {
+        "hp1": {
+          "median": 164.4,
+          "mad": 0.30000000000001137,
+          "q05": 163.5,
+          "q25": 164.1,
+          "q75": 164.8,
+          "q95": 165.3,
+          "scale": 0.44478066568100016
+        },
+        "lp1": {
+          "median": 29.3,
+          "mad": 0.40000000000000213,
+          "q05": 28.8,
+          "q25": 29.0,
+          "q75": 29.9,
+          "q95": 30.1,
+          "scale": 0.5930408875746476
+        },
+        "hp2": {
+          "median": 196.0,
+          "mad": 1.3000000000000114,
+          "q05": 194.5,
+          "q25": 195.3,
+          "q75": 198.1,
+          "q95": 198.6,
+          "scale": 1.9273828846176113
+        },
+        "lp2": {
+          "median": 14.0,
+          "mad": 0.1999999999999993,
+          "q05": 13.4,
+          "q25": 13.8,
+          "q75": 14.3,
+          "q95": 14.9,
+          "scale": 0.2965204437873212
+        },
+        "valve": {
+          "median": 85.0,
+          "mad": 0.0,
+          "q05": 80.0,
+          "q25": 83.0,
+          "q75": 85.0,
+          "q95": 85.0,
+          "scale": 1.4825796886582654
+        },
+        "temphi": {
+          "median": 96.4,
+          "mad": 0.5,
+          "q05": 95.2,
+          "q25": 95.5,
+          "q75": 96.7,
+          "q95": 97.0,
+          "scale": 0.7413011094683055
+        },
+        "templo": {
+          "median": -13.6,
+          "mad": 0.5999999999999996,
+          "q05": -15.0,
+          "q25": -14.5,
+          "q75": -13.1,
+          "q95": -12.8,
+          "scale": 0.8895613313619661
+        }
+      }
+    },
+    {
+      "module": 6,
+      "sv": "On",
+      "lifecycle_status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "CALIBRATION_DAYS_LT_7",
+        "ELIGIBLE_WINDOWS_LT_200",
+        "CALIBRATION_HALF_SHIFT_GT_1P5_RZ",
+        "SHADOW_DAYS_LT_3"
+      ],
+      "n_windows": 31,
+      "n_days": 2,
+      "source_start": "2026-08-12 01:38:00",
+      "source_end": "2026-08-20 12:59:00",
+      "statistics": {
+        "hp1": {
+          "median": 176.0,
+          "mad": 3.0999999999999943,
+          "q05": 171.9,
+          "q25": 175.3,
+          "q75": 182.3,
+          "q95": 187.3,
+          "scale": 4.5960668787034855
+        },
+        "lp1": {
+          "median": 30.8,
+          "mad": 0.1999999999999993,
+          "q05": 30.2,
+          "q25": 30.6,
+          "q75": 31.0,
+          "q95": 31.2,
+          "scale": 0.2965204437873212
+        },
+        "hp2": {
+          "median": 216.7,
+          "mad": 1.5999999999999943,
+          "q05": 210.5,
+          "q25": 214.6,
+          "q75": 218.2,
+          "q95": 221.3,
+          "scale": 2.3721635502985694
+        },
+        "lp2": {
+          "median": 22.4,
+          "mad": 0.5,
+          "q05": 21.8,
+          "q25": 22.2,
+          "q75": 23.1,
+          "q95": 23.5,
+          "scale": 0.7413011094683055
+        },
+        "valve": {
+          "median": 79.0,
+          "mad": 1.0,
+          "q05": 77.0,
+          "q25": 77.0,
+          "q75": 80.0,
+          "q95": 80.0,
+          "scale": 1.482602218936611
+        },
+        "temphi": {
+          "median": 45.8,
+          "mad": 7.399999999999999,
+          "q05": 37.4,
+          "q25": 40.5,
+          "q75": 55.8,
+          "q95": 74.8,
+          "scale": 10.971256420130919
+        },
+        "templo": {
+          "median": -63.1,
+          "mad": 0.19999999999999574,
+          "q05": -63.4,
+          "q25": -63.2,
+          "q75": -62.7,
+          "q95": -62.4,
+          "scale": 0.2965204437873159
+        }
+      }
+    },
+    {
+      "module": 7,
+      "sv": "Off",
+      "lifecycle_status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "CALIBRATION_DAYS_LT_7",
+        "ELIGIBLE_WINDOWS_LT_200",
+        "SHADOW_DAYS_LT_3"
+      ],
+      "n_windows": 5,
+      "n_days": 1,
+      "source_start": "2026-08-20 06:06:00",
+      "source_end": "2026-08-20 06:10:00",
+      "statistics": {
+        "hp1": {
+          "median": 135.4,
+          "mad": 0.5999999999999943,
+          "q05": 134.8,
+          "q25": 135.4,
+          "q75": 136.2,
+          "q95": 137.9,
+          "scale": 0.8895613313619581
+        },
+        "lp1": {
+          "median": 24.8,
+          "mad": 0.09999999999999787,
+          "q05": 24.5,
+          "q25": 24.5,
+          "q75": 24.9,
+          "q95": 24.9,
+          "scale": 0.14826022189365795
+        },
+        "hp2": {
+          "median": 169.1,
+          "mad": 0.6999999999999886,
+          "q05": 168.2,
+          "q25": 168.4,
+          "q75": 169.3,
+          "q95": 170.2,
+          "scale": 1.0378215532556108
+        },
+        "lp2": {
+          "median": 169.3,
+          "mad": 0.8000000000000114,
+          "q05": 168.3,
+          "q25": 168.5,
+          "q75": 169.4,
+          "q95": 170.4,
+          "scale": 1.1860817751493058
+        },
+        "valve": {
+          "median": 81.0,
+          "mad": 0.0,
+          "q05": 81.0,
+          "q25": 81.0,
+          "q75": 81.0,
+          "q95": 81.0,
+          "scale": 1.0
+        },
+        "temphi": {
+          "median": 26.3,
+          "mad": 0.09999999999999787,
+          "q05": 26.2,
+          "q25": 26.2,
+          "q75": 26.4,
+          "q95": 26.4,
+          "scale": 0.14826022189365795
+        },
+        "templo": {
+          "median": 25.6,
+          "mad": 0.09999999999999787,
+          "q05": 25.5,
+          "q25": 25.5,
+          "q75": 25.6,
+          "q95": 25.7,
+          "scale": 0.14826022189365795
+        }
+      }
+    },
+    {
+      "module": 7,
+      "sv": "On",
+      "lifecycle_status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "CALIBRATION_DAYS_LT_7",
+        "ELIGIBLE_WINDOWS_LT_200",
+        "SHADOW_DAYS_LT_3"
+      ],
+      "n_windows": 6,
+      "n_days": 1,
+      "source_start": "2026-08-31 02:08:00",
+      "source_end": "2026-08-31 02:13:00",
+      "statistics": {
+        "hp1": {
+          "median": 134.8,
+          "mad": 0.25,
+          "q05": 134.3,
+          "q25": 134.5,
+          "q75": 135.0,
+          "q95": 136.3,
+          "scale": 0.37065055473415276
+        },
+        "lp1": {
+          "median": 24.7,
+          "mad": 0.09999999999999787,
+          "q05": 24.6,
+          "q25": 24.6,
+          "q75": 24.8,
+          "q95": 24.8,
+          "scale": 0.14826022189365795
+        },
+        "hp2": {
+          "median": 178.4,
+          "mad": 0.29999999999999716,
+          "q05": 178.0,
+          "q25": 178.1,
+          "q75": 178.7,
+          "q95": 179.3,
+          "scale": 0.44478066568097907
+        },
+        "lp2": {
+          "median": 178.55,
+          "mad": 0.30000000000001137,
+          "q05": 178.1,
+          "q25": 178.2,
+          "q75": 178.8,
+          "q95": 179.4,
+          "scale": 0.44478066568100016
+        },
+        "valve": {
+          "median": 75.0,
+          "mad": 0.0,
+          "q05": 75.0,
+          "q25": 75.0,
+          "q75": 75.0,
+          "q95": 75.0,
+          "scale": 1.0
+        },
+        "temphi": {
+          "median": 24.7,
+          "mad": 0.09999999999999964,
+          "q05": 24.4,
+          "q25": 24.6,
+          "q75": 24.8,
+          "q95": 24.9,
+          "scale": 0.1482602218936606
+        },
+        "templo": {
+          "median": 24.0,
+          "mad": 0.0,
+          "q05": 24.0,
+          "q25": 24.0,
+          "q75": 24.1,
+          "q95": 24.2,
+          "scale": 0.1
+        }
+      }
+    },
+    {
+      "module": 8,
+      "sv": "Off",
+      "lifecycle_status": "SHADOW_VALIDATION",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED"
+      ],
+      "n_windows": 16045,
+      "n_days": 14,
+      "source_start": "2026-08-06 00:02:00",
+      "source_end": "2026-08-25 13:55:00",
+      "statistics": {
+        "hp1": {
+          "median": 158.5,
+          "mad": 0.9000000000000057,
+          "q05": 156.7,
+          "q25": 157.3,
+          "q75": 159.1,
+          "q95": 161.3,
+          "scale": 1.3343419970429584
+        },
+        "lp1": {
+          "median": 32.0,
+          "mad": 0.5,
+          "q05": 30.9,
+          "q25": 31.1,
+          "q75": 32.2,
+          "q95": 32.7,
+          "scale": 0.7413011094683055
+        },
+        "hp2": {
+          "median": 209.0,
+          "mad": 3.8000000000000114,
+          "q05": 203.9,
+          "q25": 204.6,
+          "q75": 209.8,
+          "q95": 216.2,
+          "scale": 5.6338884319591385
+        },
+        "lp2": {
+          "median": 17.9,
+          "mad": 2.099999999999998,
+          "q05": 15.5,
+          "q25": 15.7,
+          "q75": 18.2,
+          "q95": 22.2,
+          "scale": 3.11346465976688
+        },
+        "valve": {
+          "median": 90.0,
+          "mad": 0.0,
+          "q05": 85.0,
+          "q25": 86.0,
+          "q75": 90.0,
+          "q95": 90.0,
+          "scale": 2.965159377316531
+        },
+        "temphi": {
+          "median": 100.4,
+          "mad": 0.4000000000000057,
+          "q05": 99.6,
+          "q25": 100.0,
+          "q75": 100.8,
+          "q95": 101.1,
+          "scale": 0.5930408875746529
+        },
+        "templo": {
+          "median": -10.5,
+          "mad": 0.3000000000000007,
+          "q05": -12.2,
+          "q25": -10.7,
+          "q75": -10.1,
+          "q95": -9.7,
+          "scale": 0.44478066568098434
+        }
+      }
+    },
+    {
+      "module": 8,
+      "sv": "On",
+      "lifecycle_status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "SERVICE_EPOCH_UNVERIFIED",
+        "CONTROLLER_CODEBOOK_PENDING",
+        "HUMAN_APPROVAL_REQUIRED",
+        "CALIBRATION_DAYS_LT_7",
+        "ELIGIBLE_WINDOWS_LT_200",
+        "CALIBRATION_HALF_SHIFT_GT_1P5_RZ",
+        "SHADOW_DAYS_LT_3"
+      ],
+      "n_windows": 31,
+      "n_days": 2,
+      "source_start": "2026-08-12 01:38:00",
+      "source_end": "2026-08-20 12:59:00",
+      "statistics": {
+        "hp1": {
+          "median": 161.4,
+          "mad": 0.5,
+          "q05": 157.2,
+          "q25": 158.1,
+          "q75": 161.6,
+          "q95": 162.0,
+          "scale": 0.7413011094683055
+        },
+        "lp1": {
+          "median": 33.4,
+          "mad": 0.3999999999999986,
+          "q05": 32.8,
+          "q25": 32.9,
+          "q75": 33.6,
+          "q95": 33.8,
+          "scale": 0.5930408875746424
+        },
+        "hp2": {
+          "median": 219.2,
+          "mad": 1.0,
+          "q05": 216.4,
+          "q25": 218.2,
+          "q75": 220.2,
+          "q95": 221.6,
+          "scale": 1.482602218936611
+        },
+        "lp2": {
+          "median": 31.8,
+          "mad": 0.40000000000000213,
+          "q05": 31.4,
+          "q25": 31.4,
+          "q75": 32.3,
+          "q95": 32.7,
+          "scale": 0.5930408875746476
+        },
+        "valve": {
+          "median": 86.0,
+          "mad": 2.0,
+          "q05": 84.0,
+          "q25": 84.0,
+          "q75": 90.0,
+          "q95": 90.0,
+          "scale": 2.965204437873222
+        },
+        "temphi": {
+          "median": 55.2,
+          "mad": 3.8999999999999986,
+          "q05": 43.8,
+          "q25": 51.7,
+          "q75": 59.1,
+          "q95": 73.1,
+          "scale": 5.782148653852781
+        },
+        "templo": {
+          "median": -57.8,
+          "mad": 0.10000000000000142,
+          "q05": -58.0,
+          "q25": -57.9,
+          "q75": -57.7,
+          "q95": -57.6,
+          "scale": 0.14826022189366322
+        }
+      }
+    }
+  ]
+}

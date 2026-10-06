@@ -1,0 +1,257 @@
+{
+  "profile_qa": {
+    "source": "notebooks\\outputs\\ht9046mx_colab_analysis\\cache\\minute_module_state.parquet",
+    "candidate_profile": "notebooks\\outputs\\ht9046mx_phase7_cold_candidate_v2_valve_quantized\\local_profiles.csv",
+    "period_start": "2026-08-04 00:05:00",
+    "period_end": "2026-08-26 23:55:00",
+    "source_timezone": "NOT_ENCODED_UNVERIFIED",
+    "grain": "machine x module x qualified five-minute settled Cold window",
+    "filters": "Run + On + Busy=0 + SV=Off + nonnegative Valve; 12 development machines; inner_train/inner_validation/calibration only",
+    "outer_feature_rows_used_for_diagnostic": 0,
+    "past_qualified_windows": 323285,
+    "supported_windows": 323254,
+    "unsupported_windows": 31,
+    "profile_count": 87,
+    "existing_review_z": 8.0,
+    "split": [
+      {
+        "split": "calibration",
+        "supported_windows": 68530,
+        "review_windows": 11754,
+        "source_days": 10,
+        "review_pct": 17.15161243251131
+      },
+      {
+        "split": "inner_train",
+        "supported_windows": 190974,
+        "review_windows": 15907,
+        "source_days": 17,
+        "review_pct": 8.329406097165059
+      },
+      {
+        "split": "inner_validation",
+        "supported_windows": 63750,
+        "review_windows": 8321,
+        "source_days": 11,
+        "review_pct": 13.052549019607843
+      }
+    ]
+  },
+  "manual_qa": {
+    "source": "HT9046MX-20260902T013607Z-1-001\\HT9046MX\\raw\\table=ht9046mx_readings",
+    "grain": "observed-second manual-status run per machine x module (gap >2 s splits episodes)",
+    "files_read_pre_outer_only": 249,
+    "raw_rows_with_any_manual_marker": 182060,
+    "duplicate_module_timestamp_rows_excluded": 0,
+    "per_module_manual_marker_episodes": 2634,
+    "machine_level_overlapping_marker_clusters": 472,
+    "changevalve_episodes": 2122,
+    "no_service_or_refill_inference": true
+  },
+  "top_calibration_contexts": [
+    {
+      "machine_number": "024",
+      "module": 6,
+      "split": "calibration",
+      "windows": 491,
+      "days": 3,
+      "first_window": "2026-08-22 00:05:00",
+      "last_window": "2026-08-25 13:55:00",
+      "review_windows": 491,
+      "median_self_score": 12.275731822474063,
+      "p95_self_score": 14.50155132874658,
+      "review_pct": 100.0
+    },
+    {
+      "machine_number": "022",
+      "module": 2,
+      "split": "calibration",
+      "windows": 741,
+      "days": 3,
+      "first_window": "2026-08-23 00:05:00",
+      "last_window": "2026-08-25 13:55:00",
+      "review_windows": 741,
+      "median_self_score": 25.0,
+      "p95_self_score": 25.0,
+      "review_pct": 100.0
+    },
+    {
+      "machine_number": "022",
+      "module": 1,
+      "split": "calibration",
+      "windows": 741,
+      "days": 3,
+      "first_window": "2026-08-23 00:05:00",
+      "last_window": "2026-08-25 13:55:00",
+      "review_windows": 741,
+      "median_self_score": 10.11736139214955,
+      "p95_self_score": 11.29772022123369,
+      "review_pct": 100.0
+    },
+    {
+      "machine_number": "058",
+      "module": 4,
+      "split": "calibration",
+      "windows": 1372,
+      "days": 5,
+      "first_window": "2026-08-20 00:05:00",
+      "last_window": "2026-08-24 23:55:00",
+      "review_windows": 1372,
+      "median_self_score": 24.95615810063402,
+      "p95_self_score": 25.0,
+      "review_pct": 100.0
+    },
+    {
+      "machine_number": "083",
+      "module": 8,
+      "split": "calibration",
+      "windows": 646,
+      "days": 4,
+      "first_window": "2026-08-23 00:05:00",
+      "last_window": "2026-08-26 23:55:00",
+      "review_windows": 646,
+      "median_self_score": 25.0,
+      "p95_self_score": 25.0,
+      "review_pct": 100.0
+    },
+    {
+      "machine_number": "058",
+      "module": 6,
+      "split": "calibration",
+      "windows": 1371,
+      "days": 5,
+      "first_window": "2026-08-20 00:05:00",
+      "last_window": "2026-08-24 23:55:00",
+      "review_windows": 1371,
+      "median_self_score": 25.0,
+      "p95_self_score": 25.0,
+      "review_pct": 100.0
+    },
+    {
+      "machine_number": "070",
+      "module": 6,
+      "split": "calibration",
+      "windows": 1147,
+      "days": 4,
+      "first_window": "2026-08-21 00:05:00",
+      "last_window": "2026-08-24 23:55:00",
+      "review_windows": 1038,
+      "median_self_score": 14.332928638877442,
+      "p95_self_score": 19.2229866450827,
+      "review_pct": 90.49694856146469
+    },
+    {
+      "machine_number": "041",
+      "module": 8,
+      "split": "calibration",
+      "windows": 1096,
+      "days": 4,
+      "first_window": "2026-08-19 00:05:00",
+      "last_window": "2026-08-22 23:55:00",
+      "review_windows": 874,
+      "median_self_score": 11.129097531363865,
+      "p95_self_score": 12.815324430055359,
+      "review_pct": 79.74452554744525
+    },
+    {
+      "machine_number": "017",
+      "module": 1,
+      "split": "calibration",
+      "windows": 725,
+      "days": 3,
+      "first_window": "2026-08-24 00:05:00",
+      "last_window": "2026-08-26 23:55:00",
+      "review_windows": 498,
+      "median_self_score": 12.0,
+      "p95_self_score": 24.45163901254545,
+      "review_pct": 68.6896551724138
+    },
+    {
+      "machine_number": "022",
+      "module": 8,
+      "split": "calibration",
+      "windows": 741,
+      "days": 3,
+      "first_window": "2026-08-23 00:05:00",
+      "last_window": "2026-08-25 13:55:00",
+      "review_windows": 451,
+      "median_self_score": 8.093889113719174,
+      "p95_self_score": 8.76837987319577,
+      "review_pct": 60.86369770580297
+    },
+    {
+      "machine_number": "072",
+      "module": 1,
+      "split": "calibration",
+      "windows": 527,
+      "days": 3,
+      "first_window": "2026-08-17 00:05:00",
+      "last_window": "2026-08-19 23:55:00",
+      "review_windows": 263,
+      "median_self_score": 7.756643733980802,
+      "p95_self_score": 17.941454202077615,
+      "review_pct": 49.905123339658445
+    },
+    {
+      "machine_number": "017",
+      "module": 6,
+      "split": "calibration",
+      "windows": 738,
+      "days": 3,
+      "first_window": "2026-08-24 00:05:00",
+      "last_window": "2026-08-26 23:55:00",
+      "review_windows": 318,
+      "median_self_score": 3.6534916138315765,
+      "p95_self_score": 25.0,
+      "review_pct": 43.08943089430894
+    }
+  ],
+  "calibration_contributors": [
+    {
+      "split": "calibration",
+      "dominant_feature": "templo",
+      "review_windows": 3146
+    },
+    {
+      "split": "calibration",
+      "dominant_feature": "lp2",
+      "review_windows": 2991
+    },
+    {
+      "split": "calibration",
+      "dominant_feature": "dp1",
+      "review_windows": 2301
+    },
+    {
+      "split": "calibration",
+      "dominant_feature": "temphi",
+      "review_windows": 1121
+    },
+    {
+      "split": "calibration",
+      "dominant_feature": "hp1",
+      "review_windows": 780
+    },
+    {
+      "split": "calibration",
+      "dominant_feature": "valve",
+      "review_windows": 767
+    },
+    {
+      "split": "calibration",
+      "dominant_feature": "lp1",
+      "review_windows": 406
+    },
+    {
+      "split": "calibration",
+      "dominant_feature": "dp2",
+      "review_windows": 174
+    },
+    {
+      "split": "calibration",
+      "dominant_feature": "hp2",
+      "review_windows": 68
+    }
+  ],
+  "decision": "REVIEW_ONLY_NO_MODEL_OR_PROFILE_ACTIVATION"
+}

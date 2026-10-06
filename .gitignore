@@ -1,0 +1,151 @@
+# Local secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+!.env.analytics.example
+!*.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+/deployment/SECRETS_SERVER_LOCAL.md
+
+# Generated Python/Jupyter caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.venv/
+
+# Web application build/dependency outputs
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Raw telemetry remains in controlled storage / source MySQL, not GitHub
+/HT9046MX-20260902T013607Z-1-001/
+
+# Derived outputs are reproducible and excluded by default
+/notebooks/outputs/*
+/notebooks/*.html
+
+# One-off local database investigation scripts are not release artifacts.
+# Reusable and reviewed utilities belong under /scripts instead.
+/scratch/
+/artifacts/fleet-stable/
+
+# Keep the current deployable shadow release and its parity evidence
+!/notebooks/outputs/ht9046mx_phase7_shadow_replay_v2_hp180/
+!/notebooks/outputs/ht9046mx_phase7_shadow_replay_v2_hp180/**
+
+# Keep the small, explicitly non-deployable Cold candidate and its QA evidence
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v1/
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v1/candidate_manifest.json
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v1/candidate_summary.json
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v1/cold_arx_ridge.joblib
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v1/local_profiles.csv
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v1/split_manifest.csv
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v1/temporal_machine_rates.csv
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v1/lomo_machine_rates.csv
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v1/self_flag_contributors.csv
+
+# Separate quantization-aware Cold shadow candidate and matched QA (no raw telemetry)
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/README.md
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/candidate_manifest.json
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/candidate_summary.json
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/cold_arx_ridge.joblib
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/local_profiles.csv
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/split_manifest.csv
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/temporal_machine_rates.csv
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/lomo_machine_rates.csv
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/self_flag_contributors.csv
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/matched_comparison.json
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/matched_machine_rates.csv
+!/notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/matched_flag_rates.png
+
+# Small, derived one-second QA evidence; raw Parquet remains excluded
+!/notebooks/outputs/ht9046mx_one_second_valve_audit_v1/
+!/notebooks/outputs/ht9046mx_one_second_valve_audit_v1/README.md
+!/notebooks/outputs/ht9046mx_one_second_valve_audit_v1/one_second_audit_summary.json
+!/notebooks/outputs/ht9046mx_one_second_valve_audit_v1/selected_contexts.csv
+!/notebooks/outputs/ht9046mx_one_second_valve_audit_v1/one_second_daily_context.csv
+!/notebooks/outputs/ht9046mx_one_second_valve_audit_v1/manual_changevalve_plateaus.csv
+!/notebooks/outputs/ht9046mx_one_second_valve_audit_v1/isolated_valve_step_responses.csv
+!/notebooks/outputs/ht9046mx_one_second_valve_audit_v1/figures/
+!/notebooks/outputs/ht9046mx_one_second_valve_audit_v1/figures/**
+
+# Past-only profile QA: publish aggregate evidence, not the second-level event ledger
+!/notebooks/outputs/ht9046mx_cold_past_profile_audit_v1/
+/notebooks/outputs/ht9046mx_cold_past_profile_audit_v1/*
+!/notebooks/outputs/ht9046mx_cold_past_profile_audit_v1/README.md
+!/notebooks/outputs/ht9046mx_cold_past_profile_audit_v1/summary.json
+!/notebooks/outputs/ht9046mx_cold_past_profile_audit_v1/past_context_rates.csv
+!/notebooks/outputs/ht9046mx_cold_past_profile_audit_v1/past_daily_context_rates.csv
+!/notebooks/outputs/ht9046mx_cold_past_profile_audit_v1/past_flag_contributors.csv
+!/notebooks/outputs/ht9046mx_cold_past_profile_audit_v1/past_context_flag_contributors.csv
+!/notebooks/outputs/ht9046mx_cold_past_profile_audit_v1/past_daily_review_timeline.png
+!/notebooks/outputs/ht9046mx_cold_past_profile_audit_v1/past_calibration_contributors.png
+
+# Matched rule/ARX replay: publish method, aggregates and figures, not row-level telemetry
+!/notebooks/outputs/ht9046mx_rule_arx_matched_v1/
+/notebooks/outputs/ht9046mx_rule_arx_matched_v1/*
+!/notebooks/outputs/ht9046mx_rule_arx_matched_v1/README.md
+!/notebooks/outputs/ht9046mx_rule_arx_matched_v1/summary.json
+!/notebooks/outputs/ht9046mx_rule_arx_matched_v1/development_matched_machine_rates.csv
+!/notebooks/outputs/ht9046mx_rule_arx_matched_v1/development_matched_flag_burden.png
+!/notebooks/outputs/ht9046mx_rule_arx_matched_v1/development_lane_agreement.png
+!/notebooks/outputs/ht9046mx_rule_arx_matched_v1/mx080_m6_matched_timeline.png
+
+# Keep only the current local profiles and locked model-selection metadata
+!/notebooks/outputs/ht9046mx_phase7_benchmark_v2_hp180/
+/notebooks/outputs/ht9046mx_phase7_benchmark_v2_hp180/*
+!/notebooks/outputs/ht9046mx_phase7_benchmark_v2_hp180/analysis_summary.json
+!/notebooks/outputs/ht9046mx_phase7_benchmark_v2_hp180/model_local_profiles.parquet
+!/notebooks/outputs/ht9046mx_phase7_benchmark_v2_hp180/selected_hyperparameters.json
+!/notebooks/outputs/ht9046mx_phase7_benchmark_v2_hp180/shadow_model_registry.json
+!/notebooks/outputs/ht9046mx_phase7_benchmark_v2_hp180/nested_temporal_split_manifest.csv
+
+# Keep Phase 06 lifecycle metadata and candidate profiles, not large intermediates
+!/notebooks/outputs/ht9046mx_autobootstrap/
+/notebooks/outputs/ht9046mx_autobootstrap/*
+!/notebooks/outputs/ht9046mx_autobootstrap/analysis_summary.json
+!/notebooks/outputs/ht9046mx_autobootstrap/run_manifest.json
+!/notebooks/outputs/ht9046mx_autobootstrap/profile_lifecycle_status.csv
+!/notebooks/outputs/ht9046mx_autobootstrap/event_profile_readiness.csv
+!/notebooks/outputs/ht9046mx_autobootstrap/approval_package.csv
+!/notebooks/outputs/ht9046mx_autobootstrap/candidate_profiles/
+!/notebooks/outputs/ht9046mx_autobootstrap/candidate_profiles/**
+
+# Confirmed-case incremental QA: retain aggregate evidence and figure, not per-minute rows
+!/notebooks/outputs/case_incremental_replay_v1/
+/notebooks/outputs/case_incremental_replay_v1/*
+!/notebooks/outputs/case_incremental_replay_v1/README.md
+!/notebooks/outputs/case_incremental_replay_v1/summary.json
+!/notebooks/outputs/case_incremental_replay_v1/case_incremental_timeline.png
+
+# Keep notebook QA evidence
+!/notebooks/outputs/notebook_qa/
+!/notebooks/outputs/notebook_qa/**
+
+# Local editor and OS noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Explicit owner-authorized private final release configuration
+!.env
+!deployment/configuration_archive/
+!deployment/configuration_archive/**
+!deployment/models/
+!deployment/models/**
+/runtime/
+
+!notebooks/outputs/ht9046mx_autobootstrap/
+!notebooks/outputs/ht9046mx_autobootstrap/candidate_profile_statistics.csv
+!notebooks/outputs/ht9046mx_autobootstrap/profile_lifecycle_status.csv
+!notebooks/outputs/ht9046mx_autobootstrap/shadow_replay_results.csv
+!apps/web/dist/
+!apps/web/dist/**

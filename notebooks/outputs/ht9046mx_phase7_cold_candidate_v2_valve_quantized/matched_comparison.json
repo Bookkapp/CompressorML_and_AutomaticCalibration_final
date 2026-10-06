@@ -1,0 +1,50 @@
+{
+  "status": "RETROSPECTIVE_DIAGNOSTIC_ONLY_NOT_RELEASE_SELECTION",
+  "row_grain": "machine x module x five-minute qualified Cold window",
+  "source_timezone": "NOT_ENCODED_UNVERIFIED",
+  "matched_start": "2026-08-20 00:15:00",
+  "matched_end": "2026-09-01 17:05:00",
+  "v1_scored_rows": 110283,
+  "v2_scored_rows": 121492,
+  "matched_rows": 110283,
+  "v1_only_rows": 0,
+  "v2_only_rows": 11209,
+  "matched_rates": {
+    "self_flag": {
+      "v1_pct": 33.2354034620023,
+      "v2_pct": 17.495896919742844,
+      "v1_only_rows": 17362,
+      "v2_only_rows": 4,
+      "both_rows": 19291,
+      "neither_rows": 73626,
+      "v1_three_window_episodes": 605,
+      "v2_three_window_episodes": 518
+    },
+    "dynamic_flag": {
+      "v1_pct": 2.2959114278719293,
+      "v2_pct": 1.0300771651115765,
+      "v1_only_rows": 1563,
+      "v2_only_rows": 167,
+      "both_rows": 969,
+      "neither_rows": 107584,
+      "v1_three_window_episodes": 76,
+      "v2_three_window_episodes": 39
+    },
+    "any_flag": {
+      "v1_pct": 33.54732823735299,
+      "v2_pct": 17.888523163134845,
+      "v1_only_rows": 17305,
+      "v2_only_rows": 36,
+      "both_rows": 19692,
+      "neither_rows": 73250,
+      "v1_three_window_episodes": 633,
+      "v2_three_window_episodes": 551
+    }
+  },
+  "limits": [
+    "Historical outer test was inspected before designing the v2 Valve floor",
+    "This comparison cannot select features/thresholds or establish fault accuracy",
+    "Different profile coverage produces unmatched rows; headline full-sample rates are not a matched comparison",
+    "No approved MySQL Active Profiles, source timezone/units, service epochs, or prospective holdout"
+  ]
+}

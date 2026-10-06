@@ -1,0 +1,16 @@
+{
+  "failure_mode_tests.csv": "40fd511e26ee9aa2e659afa884cbb9bbabc263f41abbfce6b37b4a626a6fbed6",
+  "figures/01_primary_shadow_replay.png": "d6bb5edfd6f7b23c05c458e9f96f8151cdf94c3ba74dc4c33d47c0afbad90146",
+  "figures/02_mx080_incident_probe.png": "0f18989786ea4e33c06aa325f0c1185e3e44d3a1a052dfafbe89914eb282dddb",
+  "models/ARX-Ridge__seed_13.portable.joblib": "efbb429a40b60fdd34ca7a65f670669f2845fc2060acec25f7a7f7870f357786",
+  "mx080_module6_alert_episodes.csv": "6c8dd87a290dcbc85ab48b932623c402a66de1241d97ffa1a862c4c08697195e",
+  "mx080_module6_incident_scores.parquet": "d1ded6f32ab6ac2f0dea73442f896941130113003c36d22712dd916f1e3cc27f",
+  "mx080_module6_minute_replay_input.parquet": "64853c646d594a35a2df0cc690f202d501fbd4aafaa0218341fa153419519f58",
+  "mx080_ring_buffer_features.parquet": "38553c218f917bd11d02f8d9e3b411c517a0c24d41ae821f57dc96fea191b304",
+  "primary_alert_episodes.csv": "2d1fafbfeb9d2da5219b4670e9bee1f362f163a2eb7c555a74046795ce098bfb",
+  "primary_outer_shadow_scores.parquet": "5291d169ae12460b1a279c86d3188b473fc60ead56b846a7347f4c61cbe94c81",
+  "primary_replay_by_machine.csv": "abb7b6ba0dcc501f15cfb9c569978d79177e031091a34fd094657666cce53499",
+  "release_comparison_hp200_vs_hp180.csv": "386749aaa392ced2c020a893d234bcb14bf60b543e5fefd7a66758d655b45b1f",
+  "replay_summary.json": "d844bce47da71cf6cf87d2ebe57373e4e1053b8e43f31db6b234d9160fbeb27f",
+  "shadow_release_manifest.json": "4e5a74cd89d1e971c4dcab242545b218173bdf6d519fc41c28839eb7269ce235"
+}

@@ -1,0 +1,27 @@
+{
+  "notebook": "06_HT9046MX_AutoBootstrap_Profile_Lifecycle_Colab.ipynb",
+  "profile_version": "autobootstrap-candidate-v2-hp180",
+  "feature_version": "minute-state-core-hp180-v2",
+  "inputs": [
+    "notebooks\\outputs\\ht9046mx_colab_analysis\\cache\\minute_module_state.parquet",
+    "notebooks\\outputs\\ht9046mx_colab_analysis\\baseline_stats.csv",
+    "notebooks\\outputs\\ht9046mx_1s_window_analysis\\clean_event_summary.csv"
+  ],
+  "parameters": {
+    "calibration_fraction": 0.7,
+    "settle_minutes": 3,
+    "min_steady_days": 7,
+    "min_steady_windows": 200,
+    "min_shadow_days": 3,
+    "quarantine_z": 8.0,
+    "max_quarantine_pct": 5.0,
+    "max_half_shift_rz": 1.5,
+    "bootstrap_replicates": 400,
+    "event_candidate": 30,
+    "event_shadow": 50,
+    "event_days": 3
+  },
+  "split_contract": "per-profile past calibration then future shadow; no random row split",
+  "threshold_contract": "q99/q99.5 from retained calibration only; never from shadow",
+  "safety_contract": "no automatic READY_FOR_APPROVAL or ACTIVE_FROZEN transition"
+}

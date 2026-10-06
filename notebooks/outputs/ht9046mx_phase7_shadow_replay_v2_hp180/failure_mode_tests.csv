@@ -1,0 +1,13 @@
+test,expected_behavior_met,result_status,evidence
+valid_batch,True,PASS,valid locked contract scores in shadow
+feature_version_mismatch,True,FEATURE_VERSION_MISMATCH,rejected before scoring
+feature_order_mismatch,True,FEATURE_CONTRACT_MISMATCH,rejected before scoring
+model_checksum_mismatch,True,MODEL_CHECKSUM_MISMATCH,rejected before scoring
+portable_model_reload,True,PASS,checksum + clean reload
+missing_core_input,True,DATA_QUALITY,must not become equipment alert
+stale_input,True,DATA_QUALITY,must not become equipment alert
+out_of_order_input,True,DATA_QUALITY,quarantined before scoring
+restart_recovery,True,PASS,one-shot and checkpoint restart outputs must match
+automatic_activation,True,BLOCKED,shadow package cannot activate itself
+rollback_target,True,BLOCKED,no prior ACTIVE_FROZEN registry exists; release must stay blocked
+mx080_production_profile,True,INSUFFICIENT_PROFILE,four reference days are forensic-only

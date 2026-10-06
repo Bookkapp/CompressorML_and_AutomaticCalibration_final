@@ -1,0 +1,68 @@
+{
+  "release_version": "phase07-cold-relationship-candidate-v2-valve-quantized",
+  "activation_state": "SHADOW_ONLY_NOT_AUTHORIZED",
+  "auto_activation_allowed": false,
+  "model_family": "ColdARXRidge",
+  "model_path": "cold_arx_ridge.joblib",
+  "model_sha256": "ef6b27274012977bcc7d166e740fb18773236544465369352b648c3fba38ae12",
+  "profiles_path": "local_profiles.csv",
+  "profiles_sha256": "342ecf46e583747563548360b5d1d1abaa6ae8dc8462c19afdff103278ab4e6f",
+  "feature_version": "cold-arx-causal-5m-valve-quantized-v2",
+  "profile_version": "cold-machine-module-sv-state-valve-quantized-v2",
+  "threshold_version": "cold-past-calibration-q995-valve-quantized-v2",
+  "valve_scale_policy": "integer-command-floor-one-source-unit-v2",
+  "valve_quantization_unit": 1.0,
+  "predictors": [
+    "rz_hp1",
+    "rz_lp1",
+    "rz_dp1",
+    "rz_valve",
+    "lag1_rz_hp2",
+    "lag1_rz_lp2",
+    "lag1_rz_valve",
+    "lag1_rz_temphi",
+    "lag1_rz_templo",
+    "lag2_rz_hp2",
+    "lag2_rz_lp2"
+  ],
+  "targets": [
+    "rz_hp2",
+    "rz_lp2"
+  ],
+  "alpha": 10.0,
+  "dynamic_threshold": 4.741032646595751,
+  "self_threshold": 8.0,
+  "persistence_windows": 3,
+  "cadence_minutes": 5,
+  "qualified_state": "Compressor Run + module On + Busy 0 + SV Off + nonnegative Valve + settled",
+  "profile_keys": [
+    "machine_number",
+    "module",
+    "sv",
+    "state"
+  ],
+  "profile_source": "OFFLINE_TRAIN_ONLY_NOT_MYSQL_ACTIVE_PROFILE",
+  "source_cache_sha256": "65fbe69f62031ce6f8d0b5359430ea86bf87c1f5bbfad99f1290011c75daa9c9",
+  "source_timezone": "NOT_ENCODED_UNVERIFIED",
+  "excluded_fit_dates": [
+    "2026-08-18"
+  ],
+  "selection_policy": "alpha from inner temporal validation; thresholds from separate past calibration; outer/LOMO descriptive only",
+  "runtime_versions": {
+    "python": "3.12.10",
+    "numpy": "2.2.1",
+    "pandas": "2.2.3",
+    "polars": "1.34.0",
+    "scikit_learn": "1.8.0",
+    "joblib": "1.4.2"
+  },
+  "claim_level": "anomaly_screening_only_not_fault_accuracy",
+  "production_blockers": [
+    "source timezone and units",
+    "service/refill epochs",
+    "independent prospective holdout",
+    "alert budget",
+    "approved profile and rollback target",
+    "server shadow parity"
+  ]
+}

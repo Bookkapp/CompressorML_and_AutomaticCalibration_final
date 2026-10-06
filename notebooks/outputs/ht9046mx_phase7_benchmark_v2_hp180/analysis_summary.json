@@ -1,0 +1,109 @@
+{
+  "status": "PASS_WITH_CAVEATS",
+  "analysis_grain": "qualified minute features scored every 5 minutes",
+  "engineered_rows": 533796,
+  "development_machines": 12,
+  "external_machines": 7,
+  "model_families": 6,
+  "model_feature_count": 33,
+  "hp2_reference_policy": {
+    "qualified_reference_band_psi": [
+      180.0,
+      230.0
+    ],
+    "undercharge_screening_boundary_psi": 180.0,
+    "low_feature": "hp2_low_deficit_below_180_10psi"
+  },
+  "regime_strategies": [
+    {
+      "strategy": "Machine+Module",
+      "profile_count": 87,
+      "outer_rows": 131854,
+      "supported_outer_rows": 131853,
+      "support_pct": 99.9992415853899,
+      "median_abs_hp2_rz": 1.064985409699884,
+      "outer_flag_rate_pct": 0.5058663815006106,
+      "worst_machine_flag_pct": 2.227445713006492,
+      "threshold": 18.211250505868254,
+      "threshold_source": "separate_past_calibration_q99.5"
+    },
+    {
+      "strategy": "Machine+Module+SV",
+      "profile_count": 117,
+      "outer_rows": 131854,
+      "supported_outer_rows": 128267,
+      "support_pct": 97.27956679357472,
+      "median_abs_hp2_rz": 1.1562698733884567,
+      "outer_flag_rate_pct": 0.915278286698839,
+      "worst_machine_flag_pct": 6.372855890822586,
+      "threshold": 8.183680696074383,
+      "threshold_source": "separate_past_calibration_q99.5"
+    },
+    {
+      "strategy": "Machine+Module+LearnedRegime",
+      "profile_count": 209,
+      "outer_rows": 128421,
+      "supported_outer_rows": 127406,
+      "support_pct": 99.2096308236192,
+      "median_abs_hp2_rz": 1.2365663923737544,
+      "outer_flag_rate_pct": 0.043169081518923756,
+      "worst_machine_flag_pct": 0.3416856492027335,
+      "threshold": 33.05004721435195,
+      "threshold_source": "separate_past_calibration_q99.5"
+    }
+  ],
+  "elapsed_seconds": 569.519686700005,
+  "limits": [
+    "No technician-confirmed fault labels; no precision/recall or diagnostic accuracy is reported.",
+    "Learned regimes are statistical context clusters, not physical mode labels.",
+    "Recipe, target temperature, facility water, service epochs and source timezone remain unavailable.",
+    "ECOD/COPOD lanes are transparent empirical-tail implementations and must be revalidated if replaced with another library implementation."
+  ],
+  "family_selection_status": "NOT_SELECTED_FROM_OUTER_TESTS",
+  "inner_validation_leading_family": "ARX-Ridge",
+  "streaming_detectors": [
+    {
+      "family": "EWMA",
+      "parameter": 0.2,
+      "n_calibration": 79062,
+      "n_test": 131853,
+      "flag_rate_pct": 1.4645097191569398,
+      "worst_machine_flag_pct": 14.298169136878814,
+      "machine_iqr_pct": 1.4615711960665478,
+      "threshold": 5.678608129323578,
+      "score_ms_per_1000_rows": 12.657244052086902,
+      "threshold_source": "separate_past_calibration_q99.5",
+      "signal": "one_sided_negative_rz_hp2",
+      "claim_level": "screening_stability_not_fault_accuracy"
+    },
+    {
+      "family": "CUSUM",
+      "parameter": 0.75,
+      "n_calibration": 79062,
+      "n_test": 131853,
+      "flag_rate_pct": 1.229399406915277,
+      "worst_machine_flag_pct": 11.047452982936854,
+      "machine_iqr_pct": 1.1775801723164612,
+      "threshold": 743.8480327539993,
+      "score_ms_per_1000_rows": 11.280696684897917,
+      "threshold_source": "separate_past_calibration_q99.5",
+      "signal": "one_sided_negative_rz_hp2",
+      "claim_level": "screening_stability_not_fault_accuracy"
+    },
+    {
+      "family": "Page-Hinkley",
+      "parameter": 0.25,
+      "n_calibration": 79062,
+      "n_test": 131853,
+      "flag_rate_pct": 0.17216142218986294,
+      "worst_machine_flag_pct": 1.0960269024785152,
+      "machine_iqr_pct": 0.18290763479717106,
+      "threshold": 124.90192084018454,
+      "score_ms_per_1000_rows": 14.191322912650138,
+      "threshold_source": "separate_past_calibration_q99.5",
+      "signal": "one_sided_negative_rz_hp2",
+      "claim_level": "screening_stability_not_fault_accuracy"
+    }
+  ],
+  "feature_ablation_status": "reported_for_diagnostics_only_not_used_for_post_outer_selection"
+}

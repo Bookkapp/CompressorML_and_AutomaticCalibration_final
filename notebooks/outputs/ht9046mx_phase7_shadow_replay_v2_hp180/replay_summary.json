@@ -1,0 +1,84 @@
+{
+  "status": "PASS_WITH_PRODUCTION_BLOCKERS",
+  "input_period": "primary outer temporal: 2026-08-20 to 2026-09-01 by machine; MX-080 probe: 2026-09-03 to 2026-09-07",
+  "timezone": "Asia/Bangkok (assumed; source timestamps do not encode timezone)",
+  "row_grain": "qualified five-minute score rows derived causally from minute data; MX-080 ring features derive from one-second records",
+  "selected_model": "ARX-Ridge__seed_13",
+  "selection_rule": "locked from inner validation before outer and MX-080 replay",
+  "threshold": 7.650715626730769,
+  "persistence": "3 consecutive qualified 5-minute scoring windows",
+  "primary": {
+    "outer_rows_before_profile_gate": 131854,
+    "unsupported_profile_rows": 1,
+    "scored_rows": 131853,
+    "raw_flag_rate_pct": 0.3936201679142682,
+    "persistent_alerts": 36,
+    "alerts_per_machine_day": 0.45569620253164556,
+    "restart_deterministic": true,
+    "persistence_ms_per_1000_rows": 50.389434445938406,
+    "full_replay_elapsed_seconds": 36.60639320001064,
+    "model_file_bytes": 3666,
+    "scored_frame_bytes": 183520538
+  },
+  "mx080": {
+    "raw_seconds": 424894,
+    "minute_rows": 7190,
+    "quality_pass_minutes": 7178,
+    "quality_fail_minutes": 12,
+    "quality_pass_pct": 99.83310152990265,
+    "quality_rule": "55-60 unique seconds, max within-minute gap <=5s, required values present; replay only",
+    "reference_start": "2026-09-03 00:05:00",
+    "reference_end": "2026-09-06 23:55:00",
+    "reference_days": 4,
+    "profile_status": "INCIDENT_REPLAY_ONLY_INSUFFICIENT_FOR_PRODUCTION",
+    "profile_rows": 1151,
+    "incident_scored_rows": 239,
+    "incident_raw_flag_rate_pct": 59.41422594142259,
+    "pre_transition_scored_rows": 100,
+    "pre_transition_raw_flag_rate_pct": 3.0,
+    "post_transition_scored_rows": 139,
+    "post_transition_raw_flag_rate_pct": 100.0,
+    "incident_persistent_alerts": 1,
+    "first_raw_flag": "2026-09-07 08:05:00",
+    "first_persistent_detection": "2026-09-07 12:35:00",
+    "detection_delay_from_122320_minutes": 11.666666666666666,
+    "timing_interpretation": "Raw flags occurred before the observed 12:23:20 pressure transition; 12:35 is a descriptive post-transition persistent-alert time, not validated fault lead time.",
+    "ring_30s_available_pct": 98.65819209039547,
+    "ring_120s_available_pct": 98.09322033898306,
+    "claim": "forensic sensitivity probe, not fault accuracy and not a production-approved profile"
+  },
+  "hp2_reference_policy": {
+    "qualified_reference_band_psi": [
+      180.0,
+      230.0
+    ],
+    "undercharge_screening_boundary_psi": 180.0,
+    "feature": "hp2_low_deficit_below_180_10psi",
+    "high_side_interpretation": "separate local/multivariate deviation evidence; not undercharge and not a water-cause label"
+  },
+  "historical_release_comparison": {
+    "historical_release": "phase07-shadow-replay-v1-deprecated-hp200",
+    "current_release": "phase07-shadow-replay-v2-hp180",
+    "historical_threshold": 7.659757431174084,
+    "current_threshold": 7.650715626730769,
+    "historical_raw_flag_rate_pct": 0.3958954290004778,
+    "current_raw_flag_rate_pct": 0.3936201679142682,
+    "historical_persistent_alerts": 37,
+    "current_persistent_alerts": 36,
+    "persistent_alert_delta": -1,
+    "comparison_claim": "alert-burden stability only; no diagnostic-accuracy comparison without confirmed labels"
+  },
+  "failure_tests_passed_or_safely_blocked": 12,
+  "failure_tests_total": 12,
+  "production_blockers": [
+    "No prior ACTIVE_FROZEN model/profile exists as an exact rollback target.",
+    "Alert budget has not been approved by operations.",
+    "Service/refill epochs, source timezone and controller codebook remain unverified.",
+    "MX-080 reference contains only four days and cannot be used as a production profile.",
+    "No technician-confirmed labels; replay measures alert burden and incident sensitivity, not fault accuracy."
+  ],
+  "figures": {
+    "primary": "C:\\Users\\Book\\OneDrive\\Documents\\ChatGPT\\OPERATION_P\\notebooks\\outputs\\ht9046mx_phase7_shadow_replay_v2_hp180\\figures\\01_primary_shadow_replay.png",
+    "mx080": "C:\\Users\\Book\\OneDrive\\Documents\\ChatGPT\\OPERATION_P\\notebooks\\outputs\\ht9046mx_phase7_shadow_replay_v2_hp180\\figures\\02_mx080_incident_probe.png"
+  }
+}

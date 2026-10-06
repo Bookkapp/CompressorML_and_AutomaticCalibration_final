@@ -1,0 +1,2 @@
+machine_number,module,sv,episode_start,detected_at,detection_delay_minutes,score,threshold
+080,6,Off,2026-09-07 12:25:00,2026-09-07 12:35:00,10.0,11.358567349017216,7.650715626730769

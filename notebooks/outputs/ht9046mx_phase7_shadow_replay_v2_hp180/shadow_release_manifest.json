@@ -1,0 +1,30 @@
+{
+  "replay_version": "phase07-shadow-replay-v2-hp180",
+  "registry_version": "phase07-shadow-registry-v2-hp180",
+  "model_key": "ARX-Ridge__seed_13",
+  "model_selection_source": "inner temporal validation only",
+  "model_path": "models/ARX-Ridge__seed_13.portable.joblib",
+  "model_sha256": "efbb429a40b60fdd34ca7a65f670669f2845fc2060acec25f7a7f7870f357786",
+  "feature_version": "minute-relative-regime-hp180-v3",
+  "profile_version": "machine-module-sv-train-only-hp180-v3",
+  "threshold_version": "past-calibration-q995-hp180-v2",
+  "hp2_reference_policy": {
+    "qualified_reference_band_psi": [
+      180.0,
+      230.0
+    ],
+    "undercharge_screening_boundary_psi": 180.0,
+    "feature": "hp2_low_deficit_below_180_10psi",
+    "high_side_interpretation": "separate local/multivariate deviation evidence; not undercharge and not a water-cause label"
+  },
+  "threshold": 7.650715626730769,
+  "threshold_source": "separate past calibration q99.5",
+  "persistence_windows": 3,
+  "cadence_minutes": 5,
+  "activation_state": "SHADOW_ONLY_NOT_AUTHORIZED",
+  "auto_activation_allowed": false,
+  "rollback_target": null,
+  "rollback_status": "BLOCKED_NO_PRIOR_ACTIVE_FROZEN",
+  "mysql_write_policy": "append-only shadow tables; never write PLC/control commands",
+  "claim_level": "anomaly screening only"
+}

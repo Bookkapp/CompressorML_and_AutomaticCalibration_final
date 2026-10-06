@@ -1,0 +1,42 @@
+{
+  "schema_version": "reviewed-telemetry-case-v1",
+  "case_id": "MX080-M6-20260907-001",
+  "recorded_on": "2026-09-30",
+  "label": {
+    "behavior_anomaly": true,
+    "status": "PROJECT_OWNER_CONFIRMED",
+    "confirmation_source": "project owner reaffirmed MX080/M6 issue in current conversation on 2026-09-30",
+    "equipment_issue_reported_by_owner": true,
+    "physical_cause_confirmed": null,
+    "technician_confirmation": null
+  },
+  "subject": {
+    "machine_number": "MX080",
+    "module": 6,
+    "source_timezone_assumption": "Asia/Bangkok"
+  },
+  "confirmed_interval": {
+    "start_inclusive": "2026-09-07T12:23:28",
+    "end_exclusive": "2026-09-08T00:00:00",
+    "grain": "source-second incident interval; scoring limited to qualified completed minute windows",
+    "start_definition": "first observed Hp_2nd above 300 in the existing source-second forensic evidence"
+  },
+  "source_provenance": {
+    "dataset": "MX080 Module 6 observed-second forensic export, 3–7 Sep 2026",
+    "file": "notebooks/outputs/mx080_module6_forensics_v1/module6_one_second_unique.parquet",
+    "sha256": "e0740b20e628cf907009436b2215a53eb4ba854674c66d11526ddb2f8bba7ef8",
+    "source_rows": 424894,
+    "quality_preprocessing": "ambiguous duplicate timestamps previously excluded; missing seconds not interpolated",
+    "new_replay_report": "notebooks/outputs/case_incremental_replay_v1/README.md",
+    "historical_active_replay_report": "notebooks/outputs/mx080_active_profile_replay_v1/README.md"
+  },
+  "other_dates": {
+    "2026-09-05": "temperature-dominated detector flags remain separately unadjudicated; not automatically labeled by this case"
+  },
+  "future_label_use": {
+    "label_scope": "confirmed abnormal behavior in the incident interval; cause unknown",
+    "training_status": "REVIEWED_CASE_NOT_AUTOMATICALLY_INGESTED",
+    "split_group": "MX080-M6-20260907-001",
+    "note": "Historical reviewed case. The strict 1-minute replay has only four past reference days, so it tests sensitivity/parity rather than qualified calibration approval or prospective accuracy."
+  }
+}
