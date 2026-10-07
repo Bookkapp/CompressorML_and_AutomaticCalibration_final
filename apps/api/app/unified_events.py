@@ -12,11 +12,27 @@ from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 from zoneinfo import ZoneInfo
 
-from sqlalchemy import Column, Index, Integer, MetaData, String, Table, Text, and_, or_, select
+from sqlalchemy import BigInteger, Column, Index, Integer, MetaData, String, Table, Text, and_, or_, select
 from .qualified_windows import _safe_number
 
 EVENT_VERSION = "compressor-unified-events-v1"
 metadata = MetaData()
+
+# Allocated under one row lock in the producer transaction, not AUTO_INCREMENT:
+# readers may advance through seq without skipping a later committed lower ID.
+dashboard_sequence = Table("ht9046mx_dashboard_sequence", metadata,
+    Column("id", Integer, primary_key=True), Column("last_seq", BigInteger, nullable=False))
+dashboard_identity = Table("ht9046mx_dashboard_identity", metadata,
+    Column("id", Integer, primary_key=True), Column("stream_id", String(64), nullable=False))
+dashboard_feed = Table("ht9046mx_dashboard_feed", metadata,
+    Column("seq", BigInteger, primary_key=True), Column("event_id", String(64), nullable=False, unique=True),
+    Column("kind", String(16), nullable=False), Column("machine_number", String(64), nullable=False),
+    Column("module", Integer), Column("occurred_at", String(32), nullable=False),
+    Column("payload_json", Text, nullable=False))
+dashboard_latest = Table("ht9046mx_dashboard_latest", metadata,
+    Column("machine_number", String(64), primary_key=True), Column("module", Integer, primary_key=True),
+    Column("occurred_at", String(32), nullable=False), Column("exported_at", String(32), nullable=False),
+    Column("state_key", String(64), nullable=False), Column("payload_json", Text, nullable=False))
 events = Table("ht9046mx_events", metadata,
     Column("event_id", String(64), primary_key=True),
     Column("source_event_key", String(64), nullable=False),
@@ -80,6 +96,9 @@ def make_event(*, source_key, machine, module, occurred_at, timezone_name, event
 
 def append_events(conn, rows):
     """Caller controls transaction/checkpoint. Retry never updates old evidence."""
+    from .dashboard_export import publish
+    publish(conn, [{"event_id":r["event_id"], "kind":"EVENT", "machine_number":r["machine_number"],
+                   "module":r["module"], "occurred_at":r["occurred_at"], "payload":r} for r in rows])
     for offset in range(0, len(rows), 500):
         batch = rows[offset:offset+500]
         if conn.dialect.name == "mysql":

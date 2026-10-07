@@ -49,6 +49,9 @@ def consume_observed(conn,rows,as_of,stream,checkpoint,*,source_namespace,mode,r
         else:
             points=[{"time":w.window_start.isoformat(),"category":"NO_ACTIVE_CONTEXT_PROFILE",
                      "features":w.features,"quality":w.measurement_quality} for w in current]
+        from .dashboard_export import publish_points
+        publish_points(conn,machine,module,points,profile_id=model['profile_id'] if ready else None,
+            approved=ready,mode=mode,run_id=run_id,timezone_name=stream.policy.source_timezone)
         for p in points:
             identity=[p["category"],model["profile_id"] if ready else None,p.get("quality")]
             if previous.get(key)!=identity:

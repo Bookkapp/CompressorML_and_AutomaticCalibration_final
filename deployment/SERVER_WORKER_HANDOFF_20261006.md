@@ -1,3 +1,5 @@
+> **7 Oct superseding update:** Read `ONE_WAY_MYSQL_UPDATE_20261007.md` and root `HANDOFF_SERVER.md` first. The reverse bridge is disabled; .69 pulls from .73. Merge new keys into current Server config, preserve installed frozen model/Profile/services. Explicit owner permission covers actual configuration/secrets in the PRIVATE final repository.
+
 # Handoff: Operation Worker / Fleet — Server 10.195.17.73
 
 Updated: 6 October 2026, Asia/Bangkok. Owner requested a handoff for Codex running on the Server, rather than deploying from the development PC.

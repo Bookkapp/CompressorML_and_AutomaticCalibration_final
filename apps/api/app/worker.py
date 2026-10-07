@@ -88,10 +88,10 @@ def run_detector_job() -> None:
     if not settings.detector_worker_enabled:
         return
     from .qualified_detector import run_configured_cycle
-    from .qualified_bridge import run_configured_bridge
     try:
         result = run_configured_cycle(settings)
-        result["bridge"] = run_configured_bridge(settings)
+        # Delivery is owned by Dashboard pull; no .73 -> .69 network dependency.
+        result["bridge"] = {"status":"DASHBOARD_PULL_MODE", "database_writes":0}
         _record("QUALIFIED_DETECTOR", "COMPLETED", result)
     except Exception as exc:
         # Do not persist connector exceptions that can contain credential-bearing URLs/SQL.

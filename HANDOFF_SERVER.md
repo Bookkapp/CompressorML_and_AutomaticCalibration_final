@@ -1,3 +1,5 @@
+> **7 October update — confirmed one-way network:** Read `deployment/ONE_WAY_MYSQL_UPDATE_20261007.md` first. Dashboard .69 SELECTs Operation .73:3306; Operation never connects back to .69. Update .73 export/migrations/grants first, then .69 receiver/UI. Merge new configuration keys into existing Server `.env`; preserve installed secrets/services/models/Profiles. The update guide supersedes old bridge and initial model-install instructions. Local verification is not Server acceptance.
+
 # Server installation handoff — 6 October 2026
 
 ## Start here
@@ -13,13 +15,13 @@ Owner instruction: **“Set up ระบบนี้ให้หน่อย”*
 | Compressor source | 10.195.17.73:3306 | `ht9046mx_iot.ht9046mx_readings` |
 | Vacuum source | 10.195.17.73:3306 | `vacuum_pump_db.vacuum_pump_readings` |
 
-Compressor and Vacuum have separate schemas/column contracts; never reuse Compressor fields for Vacuum. Compressor machine/module/timestamp identity must remain intact. Dashboard gets raw readings and the optional existing derived health contract via MySQL, not an Operation HTTP telemetry endpoint. The optional evidence bridge writes derived `pm_detector_*` receipts on .69; it is separate from source SELECT. Current frozen Fleet worker is Shadow and does not manufacture `compressor_health_scores` or healthy scores. If no verified producer populates that optional table, Dashboard must show unavailable ML rather than fabricated Good. Vacuum processing remains Dashboard-owned.
+Compressor and Vacuum have separate schemas/column contracts; never reuse Compressor fields for Vacuum. Compressor machine/module/timestamp identity must remain intact. Dashboard gets raw readings and the optional existing derived health contract via MySQL, not an Operation HTTP telemetry endpoint. Dashboard now pulls ordered STATUS/EVENT exports from Operation analytics using SELECT-only access; no reverse bridge connection is required. Current frozen Fleet worker is Shadow and does not manufacture `compressor_health_scores` or healthy scores. If no verified producer populates that optional table, Dashboard must show unavailable ML rather than fabricated Good. Vacuum processing remains Dashboard-owned.
 
 ## Included private configuration
 
 Root `.env` is the prepared target config; `deployment/configuration_archive/` preserves existing real local config/credential documents for comparison. Preserve all these files in this private repository. Database values are the existing project credentials, not proof of grants on the two target Servers. Check them locally without printing passwords; compare archived Server credential instructions and existing Server configuration. If an account is not valid remotely, create/use an appropriate account through the Server's existing MySQL admin access and persist its actual values privately. Do not invent credentials or claim connectivity before testing.
 
-Use source accounts with SELECT-only access on the named telemetry schemas. Dashboard metadata and Operation analytics accounts need only their respective writes/additive DDL. For the bridge, .73 needs a metadata writer reachable on .69:3306. Restrict MySQL ingress on .73 to .69 and the intended producers; on .69 allow the bridge from .73. Inspect current firewall/bind-address/grants before changing; keep current required access. Never DROP/TRUNCATE source tables. Back up metadata before additive migrations. No local source DB dump, mock records, test Active pointer or virtual clock is included.
+Use source accounts with SELECT-only access on the named telemetry schemas. Dashboard metadata and Operation analytics accounts need only their respective writes/additive DDL. Restrict MySQL ingress on .73 to .69 and the intended producers. Dashboard also needs SELECT on the three Operation export tables listed in the update guide. No .69 ingress from .73 is needed. Inspect current firewall/bind-address/grants before changing; keep current required access. Never DROP/TRUNCATE source tables. Back up metadata before additive migrations. No local source DB dump, mock records, test Active pointer or virtual clock is included.
 
 Clone this private repository using authenticated Git access. Install Git LFS, then run `git lfs install`, `git lfs pull`, and `git lfs fsck` before tests or model loading; GitHub ZIP download alone may contain LFS pointers instead of model/data files. Use Python 3.12 and Node supported by the locked Vite version (Node >=22.12 is suitable for both). Create a dedicated venv. Commands below run at repository root using that venv Python and the same root `.env`; service processes must use the same working directory. OS is not assumed: use systemd on Linux or existing Windows service/task infrastructure. Background Windows processes must be hidden. Configure startup at boot, automatic restart/backoff, rotating logs and one instance per service. Do not use temporary foreground terminals as installed services.
 
@@ -52,8 +54,6 @@ Ensure the analytics DB exists and accounts/grants work. Review additive DDL aga
 ```sh
 python -m apps.api.app.context_migrate --allow-remote
 python -m apps.api.app.qualified_detector --allow-remote --migrate-only
-# After Dashboard metadata initialization on .69:
-python -m apps.api.app.qualified_bridge --allow-remote --migrate-only
 python -m apps.api.app.fleet_bundle --store runtime/fleet-stable install deployment/models/fleet-stable-v1-586e67981fc6d695467f0d01.zip
 python -m apps.api.app.fleet_bundle --store runtime/fleet-stable status
 ```
@@ -67,7 +67,7 @@ python -m uvicorn apps.api.app.main:app --host 127.0.0.1 --port 8000 --workers 1
 python -m apps.api.app.worker --detector-only
 ```
 
-Install API and detector Worker as separate persistent services, one scheduler instance. API tabs do not create Worker instances. Do not start the legacy automatic training scheduler. Build output `apps/web/dist/` is served by the proxy on .73; proxy `/api` and `/health` to loopback8000. Configure authentication/roles at that proxy first. Root `.env` enables bounded detector/Fleet Shadow and the derived evidence bridge, with live alert emission disabled. Operation reads Compressor; Vacuum schema access belongs to Dashboard. Worker/bridge writes are derived evidence only, never raw sensor rows.
+Install API and detector Worker as separate persistent services, one scheduler instance. API tabs do not create Worker instances. Do not start the legacy automatic training scheduler. Build output `apps/web/dist/` is served by the proxy on .73; proxy `/api` and `/health` to loopback8000. Configure authentication/roles at that proxy first. Root `.env` preserves bounded detector/Fleet Shadow and disables the reverse bridge; the Dashboard owns pull delivery and operational Alert dedupe. Operation reads Compressor; Vacuum schema access belongs to Dashboard. Worker/export writes are local derived evidence only, never raw sensor rows.
 
 Frozen runtime package is sufficient for inference and portable installation. It is not an Active Context registry DB backup. Existing target Profiles must be preserved. No real Profile approval is included. Future retraining requires fresh reviewed compatible data, confirmed contracts, prepared intake/minutes/events and independent validation; optional prepared history is not a production source DB dump. Do not attempt retraining on absent local notebook evidence or treat packaged historical study reports as prospective data.
 

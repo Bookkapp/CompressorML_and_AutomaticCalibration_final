@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "source_repository": "OPERATION_P",
   "source_head": "edfc2535cfaf2586572873de718de083ea93108f",
   "includes_current_working_tree": true,
@@ -15,5 +15,8 @@
     "artifacts/fleet-workflow-final-targeted-20261006.log",
     "artifacts/fleet-workflow-qa-20261006.log",
     "artifacts/fleet-workflow-tests-20261006.log"
-  ]
+  ],
+  "update_base_commit": "0f6e83e",
+  "update": "One-way MySQL pull, durable hourly health and chart UX",
+  "server_deployment_verified": false
 }
