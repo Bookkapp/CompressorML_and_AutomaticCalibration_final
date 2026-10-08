@@ -1,40 +1,5 @@
 > **Final private Server release — 6 Oct 2026:** On “Set up ระบบนี้ให้หน่อย”, read `HANDOFF_SERVER.md` first. Owner explicitly authorized real deploy secrets/config in this PRIVATE `_final` repository. This supersedes older secret-exclusion instructions for this release. Server .69 Dashboard / .73 Operation; no Server installation or Profile approval has occurred in packaging.
 
-//
-Configure the Operation side of the new one-way MySQL integration with Dashboard .69.
-
-Repositories:
-- Operation: https://github.com/Bookkapp/CompressorML_and_AutomaticCalibration_final
-- Dashboard: https://github.com/Bookkapp/Compressor_and_VacuumPump_final
-
-Dashboard .69 is updated to commit 5bfa10a and running. Both raw telemetry sources work. Its Operation receiver is enabled but gets MySQL error 1044 when accessing ht9046mx_analytics.
-
-Read the repository AGENTS.md and latest handoff first, then Dashboard deployment/ONE_WAY_MYSQL_UPDATE_20261007.md. Inspect the actual Server, existing installation, services, .env and database before making changes.
-
-I authorize the necessary Operation update, additive analytics migrations, restricted reader grants and restart of the existing Operation API and single detector Worker.
-
-Complete these tasks:
-1. Back up ht9046mx_analytics, service configuration, private .env and current model/Profile pointers. Record the previous Git revision for rollback.
-2. Pull the latest Operation release while preserving local changes, working credentials, model paths and service configuration.
-3. Set HT9046MX_DETECTOR_BRIDGE_ENABLED=false. The network is one-way: .69 initiates connections to .73:3306. Operation must not connect back to .69.
-4. Install the required dependencies and run the documented additive migrations:
-   python -m apps.api.app.context_migrate --allow-remote
-   python -m apps.api.app.qualified_detector --allow-remote --migrate-only
-5. Verify the Operation dashboard export tables exist and use InnoDB.
-6. Resolve the actual OPERATION_DB_USER from the private Dashboard .env through an authorized local/remote configuration source. Do not guess the username or print passwords. If that configuration is unavailable, complete independent work and ask me for the username.
-7. Grant that reader, restricted to host 10.195.17.69, SELECT only on:
-   ht9046mx_analytics.ht9046mx_dashboard_feed
-   ht9046mx_analytics.ht9046mx_dashboard_sequence
-   ht9046mx_analytics.ht9046mx_dashboard_identity
-   Preserve its existing raw-source SELECT grants. Do not use a wildcard host or an analytics writer account.
-8. Run the required tests/build, then restart the existing Operation API and exactly one detector Worker using the installed supervisor.
-9. Verify feed publication, sequence/producer identity, service health and restart persistence. Record actual results and remaining blockers in the Server acceptance documentation.
-
-Preserve all source telemetry, Profiles and frozen models. Do not approve a Profile, change Active/model pointers, switch Shadow to live, fabricate Health Scores, reset feed sequences/cursors, or delete existing data. Do not open reverse connectivity or change unrelated firewall rules.
-
-Finish with the deployed commit, services restarted, redacted reader/grant details, test results, and the exact checks Codex on .69 should run to confirm ingestion.
-
-//
 
 # OPERATION_P
 
