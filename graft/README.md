@@ -1,3 +1,7 @@
+## 9 October 2026 — Empty-feed diagnostic handoff
+
+Prepared deployment/EMPTY_FEED_SERVER_DIAGNOSTIC_20261009.md for read-only diagnosis on Operation .73 first, then receiver verification on Dashboard .69. Current code publishes NOT_EVALUATED without Active; historical source lag/finalization remains a hypothesis to recheck on the actual installation. No new Server check, restart, DB mutation, Profile activation or runtime-policy change occurred. Local review/persistence/export regression suite: 52 passed before this documentation update.
+
 > **7 Oct 2026 ? actual .73 Server setup, PARTIAL:** `th1pmdbdev1w` / Windows Server 2022. Dedicated venv (existing Python3.13; Python3.12 installer blocked1625), authenticated Git/LFS/checksums, metadata backup, least-privilege source/analytics accounts, additive schemas and Fleet Shadow revision1 installed. Actual6machine?8module cycle:6,816source rows/968module-minutes. Fixed MySQL checkpoint TEXT overflow with LONGTEXT;262API tests/build pass; isolated actualMySQL rollback/reconnect/retry pass. Temporary loopback API/frontend and detector-only Worker work; persistent task registration denied (non-elevated token), authenticated LAN/roles and .69bridge remain pending. Cold inventory65.905s;60/60warmGETs/10clients p95257.96ms exclude browser/cold work. Existing15Profiles/0Active registry hashes unchanged; no source writes or approval. Source lag/late quarantine remains unresolved. Evidence: `deployment/SERVER_ACCEPTANCE.md`.
 
 # Graft — Code, Data, and Model Connection Map
