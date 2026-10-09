@@ -15,6 +15,7 @@ from decimal import Decimal
 
 from sqlalchemy import (BigInteger, Column, Index, Integer, MetaData, String, Table,
                         Text, select, update)
+from sqlalchemy.dialects.mysql import LONGTEXT
 
 from .qualified_scoring import QualifiedShadowScorer, TemporalParameters
 from .qualified_stream import CompletedMinuteStream
@@ -28,7 +29,9 @@ runs = Table("ht9046mx_rehearsal_stream", metadata,
     Column("revision", Integer, nullable=False),
     Column("source_cursor", BigInteger, nullable=False),
     Column("contract_json", Text, nullable=False),
-    Column("checkpoint_json", Text, nullable=False))
+    # Eight modules plus overlap receipts routinely exceed MySQL TEXT's 64 KiB.
+    # SQLite rehearsals retain TEXT; the Server checkpoint must remain atomic.
+    Column("checkpoint_json", Text().with_variant(LONGTEXT(), "mysql"), nullable=False))
 batches = Table("ht9046mx_rehearsal_batch", metadata,
     Column("run_id", String(64), primary_key=True),
     Column("batch_id", String(64), primary_key=True),

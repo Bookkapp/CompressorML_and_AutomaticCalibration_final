@@ -1,0 +1,3 @@
+# Additional driver dependency for the target MySQL caching_sha2_password accounts.
+pymysql[rsa]==1.1.2
+cryptography==50.0.2

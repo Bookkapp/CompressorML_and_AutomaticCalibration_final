@@ -141,6 +141,10 @@ def store(monkeypatch,tmp_path):
     monkeypatch.setattr(jobs,"connection",conn); monkeypatch.setattr(jobs,"get_engine",lambda:engine)
     monkeypatch.setattr(jobs,"get_settings",config)
     monkeypatch.setattr(jobs,"_latest_source_time",lambda *_: datetime(2026,10,1,12))
+    # Source-change invalidation belongs to this isolated fixture, never the
+    # configured Server database when tests run beside a deployment .env.
+    from apps.api.app import qualified_cache
+    monkeypatch.setattr(qualified_cache,"invalidate_period",lambda *a,**k: None)
     s=selection(); rows=windows(s)
     monkeypatch.setattr(jobs,"load_observed_one_minute_windows",lambda *a,**k: [w for w in rows if k["start"].replace(tzinfo=None)<=w.window_start<k["end"].replace(tzinfo=None)])
     def persist(*args,transaction,reference_review):

@@ -1,0 +1,43 @@
+{
+  "qa_schema": "ht9046mx_setup_qa_20261007",
+  "source_rows": 1775,
+  "modules": 8,
+  "rollback_pass": true,
+  "restart_retry_pass": true,
+  "committed_counts": {
+    "ht9046mx_detector_evidence": 232,
+    "ht9046mx_detector_source_receipt": 1775,
+    "ht9046mx_events": 49,
+    "cursor": 1775
+  },
+  "first": {
+    "duplicate_batch": false,
+    "late_rows_dropped": 0,
+    "pending_rows": 59,
+    "accepted_rows": 1775,
+    "windows_written": 232,
+    "source_cursor": 1775,
+    "revision": 1,
+    "episodes_updated": 0,
+    "source_rows_scanned": 1775,
+    "new_source_rows": 1775,
+    "quarantined_rows": 0,
+    "mode": "DETECTOR_SHADOW"
+  },
+  "retry": {
+    "duplicate_batch": false,
+    "late_rows_dropped": 0,
+    "pending_rows": 59,
+    "accepted_rows": 0,
+    "windows_written": 0,
+    "source_cursor": 1775,
+    "revision": 2,
+    "episodes_updated": 0,
+    "source_rows_scanned": 1775,
+    "new_source_rows": 0,
+    "quarantined_rows": 0,
+    "mode": "DETECTOR_SHADOW"
+  },
+  "source_written": false,
+  "active_approved": false
+}

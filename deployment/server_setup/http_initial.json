@@ -1,0 +1,42 @@
+[
+  {
+    "path": "/health",
+    "status": 200,
+    "seconds": 1.14,
+    "content_type": "application/json"
+  },
+  {
+    "path": "/",
+    "status": 200,
+    "seconds": 0.478,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/api/v1/source/machines",
+    "error": "ReadTimeout"
+  },
+  {
+    "path": "/api/v1/calibration/profiles",
+    "status": 200,
+    "seconds": 0.365,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/api/v1/context/coverage?machine_number=MX017",
+    "status": 200,
+    "seconds": 0.413,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/api/v1/fleet/models",
+    "status": 200,
+    "seconds": 0.38,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/api/not-found",
+    "status": 200,
+    "seconds": 0.364,
+    "content_type": "text/html; charset=utf-8"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "path": "notebooks\\outputs\\ht9046mx_phase7_benchmark_v2_hp180\\model_local_profiles.parquet",
+    "sha256": "cc4aede9d5383b1e5dbd9f34a14d9c70b5045157205eaf2da7212ab499909f78"
+  },
+  {
+    "path": "notebooks\\outputs\\ht9046mx_phase7_cold_candidate_v1\\cold_arx_ridge.joblib",
+    "sha256": "e80cb3891431271de6f09eb0bf993beaee76ba1d656113eb5ae530ff5b6daf45"
+  },
+  {
+    "path": "notebooks\\outputs\\ht9046mx_phase7_cold_candidate_v2_valve_quantized\\cold_arx_ridge.joblib",
+    "sha256": "ef6b27274012977bcc7d166e740fb18773236544465369352b648c3fba38ae12"
+  },
+  {
+    "path": "notebooks\\outputs\\ht9046mx_phase7_shadow_replay_v2_hp180\\mx080_module6_incident_scores.parquet",
+    "sha256": "d1ded6f32ab6ac2f0dea73442f896941130113003c36d22712dd916f1e3cc27f"
+  },
+  {
+    "path": "notebooks\\outputs\\ht9046mx_phase7_shadow_replay_v2_hp180\\mx080_module6_minute_replay_input.parquet",
+    "sha256": "64853c646d594a35a2df0cc690f202d501fbd4aafaa0218341fa153419519f58"
+  },
+  {
+    "path": "notebooks\\outputs\\ht9046mx_phase7_shadow_replay_v2_hp180\\mx080_ring_buffer_features.parquet",
+    "sha256": "38553c218f917bd11d02f8d9e3b411c517a0c24d41ae821f57dc96fea191b304"
+  },
+  {
+    "path": "notebooks\\outputs\\ht9046mx_phase7_shadow_replay_v2_hp180\\primary_outer_shadow_scores.parquet",
+    "sha256": "5291d169ae12460b1a279c86d3188b473fc60ead56b846a7347f4c61cbe94c81"
+  },
+  {
+    "path": "notebooks\\outputs\\ht9046mx_phase7_shadow_replay_v2_hp180\\models\\ARX-Ridge__seed_13.portable.joblib",
+    "sha256": "efbb429a40b60fdd34ca7a65f670669f2845fc2060acec25f7a7f7870f357786"
+  }
+]

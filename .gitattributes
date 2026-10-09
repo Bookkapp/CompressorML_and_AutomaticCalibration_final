@@ -3,3 +3,6 @@
 *.pkl filter=lfs diff=lfs merge=lfs -text
 *.pickle filter=lfs diff=lfs merge=lfs -text
 *.onnx filter=lfs diff=lfs merge=lfs -text
+# These immutable manifests checksum CRLF bytes; Git must preserve them.
+notebooks/outputs/ht9046mx_phase7_cold_candidate_v1/local_profiles.csv -text
+notebooks/outputs/ht9046mx_phase7_cold_candidate_v2_valve_quantized/local_profiles.csv -text
