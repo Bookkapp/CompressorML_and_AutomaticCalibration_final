@@ -304,6 +304,9 @@ Windows supervisor ด้านบนเป็นเส้นทางหลั�
 | `deployment/server_setup` | Windows ASGI/supervisor/tasks |
 | `deployment/mysql*.sql` | analytics migrations |
 | `deployment/models` | frozen bundle และ SHA256 |
-| `notebooks` / `research` | code/artifacts การวิเคราะห์ย้อนหลัง ไม่จำเป็นต่อ inference ทุกไฟล์ |
+| `notebooks/support` | โมดูลที่เว็บ Fleet Models/ตัวโหลดโมเดลยัง import ใช้งาน ได้แก่ Fleet build, transition build, reference study และคลาสโมเดลย้อนหลัง |
+| `notebooks/outputs` | เหลือชุดข้อมูล/โมเดลที่ API โหมด preview และตัวโหลดโมเดลย้อนหลังยังอ้างอิง ส่วน Notebook และผลทดลองอื่นถูกนำออก |
 
-เอกสาร `.md` เดิมถูกยุบเหลือ README นี้ตามคำขอ เรียกดูย้อนหลังได้จาก [ต้นฉบับก่อนจัดเอกสาร](https://github.com/Bookkapp/CompressorML_and_AutomaticCalibration_final/tree/c238c203cb12f0e71652b9f03dd23d31b3352d56) ส่วน `RELEASE_MANIFEST.json`/`RELEASE_SHA256.json` เดิมเป็นหลักฐาน release ก่อนจัดเอกสาร อาจอ้างไฟล์ Markdown ที่ลบแล้ว จึงไม่ใช่ checksum receipt ของ checkout ฉบับจัดเอกสารนี้
+เอกสาร `.md` เดิมถูกยุบเหลือ README นี้ ส่วนชุด QA, หน้าเว็บทดลอง, ตัวสร้าง Mock แบบ standalone, Notebook นำเสนอ/ทดลอง, ผลทดลองที่ไม่ได้ใช้งาน และ receipt/release manifest เก่าถูกนำออกจาก checkout เพื่อให้ Repo เน้นไฟล์ของระบบที่ติดตั้งจริง โมดูลที่หน้าเว็บ/API ยังเรียกใช้ รวมถึง frozen bundle และ checksum ของ bundle ยังคงอยู่
+
+เรียกดูไฟล์ที่นำออกได้จาก [ต้นฉบับก่อนจัดเอกสารและคัดไฟล์ระบบ](https://github.com/Bookkapp/CompressorML_and_AutomaticCalibration_final/tree/c238c203cb12f0e71652b9f03dd23d31b3352d56) การคัดไฟล์นี้ไม่ลบฐานข้อมูลหรือ model store ที่ติดตั้งแยกอยู่บน Server
